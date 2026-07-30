@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>온보딩2 화면</title>
+
+    <style>
+        /* 기본 설정 */
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 375px;
+            height: 812px;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow: hidden;
+            background-color: #ffffff;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Apple SD Gothic Neo",
+                "Noto Sans KR",
+                Arial,
+                sans-serif;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        /* 모바일 앱 전체 화면 */
+        .app-screen {
+            position: relative;
+            width: 375px;
+            height: 812px;
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+
+        /* 상단 텍스트 영역 */
+        .intro-area {
+            position: absolute;
+            top: 101px;
+            left: 24px;
+            width: 327px;
+        }
+
+        .intro-title {
+            margin: 0;
+            color: #334a80;
+            font-size: 29px;
+            font-weight: 700;
+            line-height: 1.4;
+            letter-spacing: -1.3px;
+        }
+
+        .title-first-line {
+            display: block;
+            color: #6f88c4;
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 1.3;
+            letter-spacing: -0.8px;
+        }
+
+        .title-second-line {
+            display: block;
+            margin-top: 2px;
+            white-space: nowrap;
+        }
+
+        .title-light {
+            color: #6f88c4;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: -0.8px;
+        }
+
+        .intro-description {
+            margin: 23px 0 0;
+            color: #90a4d2;
+            font-size: 17px;
+            font-weight: 500;
+            line-height: 1.5;
+            letter-spacing: -0.8px;
+            white-space: nowrap;
+        }
+
+        /* 중앙 이미지 영역 */
+        .visual-area {
+            position: absolute;
+            top: 332px;
+            left: 0;
+            width: 375px;
+            height: 290px;
+            overflow: hidden;
+        }
+
+        /* 연한 파란색 배경 도형 */
+        .visual-background {
+            position: absolute;
+            top: 0;
+            left: -55px;
+            width: 500px;
+            height: 245px;
+            background-color: #f0f2fa;
+            border-radius: 50% 50% 40% 45%;
+            transform: rotate(2deg);
+        }
+
+        /* 하단 흰색 곡선 */
+        .visual-background::after {
+            content: "";
+            position: absolute;
+            left: 22px;
+            bottom: -99px;
+            width: 450px;
+            height: 135px;
+            background-color: #ffffff;
+            border-radius: 50% 50% 0 0;
+            transform: rotate(-6deg);
+        }
+
+        /* 곰, 박스, 전구, 트럭 이미지 */
+        .character-image {
+            position: absolute;
+            top: 34px;
+            left: 71px;
+            z-index: 2;
+            display: block;
+            width: 235px;
+            height: auto;
+        }
+
+        /* 페이지 표시 점 */
+        .pagination {
+            position: absolute;
+            top: 663px;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            width: 375px;
+            height: 13px;
+        }
+
+        .pagination-dot {
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: #edf0f8;
+            border-radius: 50%;
+        }
+
+        .pagination-dot.active {
+            background-color: #5775ba;
+        }
+
+        /* 시작하기 버튼 */
+        .start-button {
+            position: absolute;
+            bottom: 34px;
+            left: 24px;
+            width: 327px;
+            height: 48px;
+            padding: 0;
+            border: 0;
+            border-radius: 12px;
+            background-color: #5775ba;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 48px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .start-button:active {
+            background-color: #4866aa;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-screen">
+
+        <!-- 상단 안내 문구 -->
+        <section class="intro-area">
+            <h1 class="intro-title">
+                <span class="title-first-line">차만 있다면</span>
+
+                <span class="title-second-line">
+                    장비는
+                    <span class="title-light">부담적은</span>
+                    렌탈로
+                </span>
+            </h1>
+
+            <p class="intro-description">
+                차박에 필요한 물품들을 용도별로 둘러봐요
+            </p>
+        </section>
+
+        <!-- 중앙 이미지 -->
+        <section class="visual-area">
+            <div class="visual-background"></div>
+
+            <img
+                class="character-image"
+                src="./Images/Work2_ill.svg"
+                alt="차박 장비가 담긴 상자를 들고 있는 곰 캐릭터"
+            >
+        </section>
+
+        <!-- 온보딩 페이지 표시 -->
+        <div class="pagination">
+            <span class="pagination-dot"></span>
+            <span class="pagination-dot active"></span>
+            <span class="pagination-dot"></span>
+        </div>
+
+        <!-- 시작하기 버튼 -->
+        <a href="Login.html">
+            <button type="button" class="start-button">
+                시작하기
+            </button>
+        </a>
+    </div>
+    <script>
+        setTimeout(function () {
+            window.location.href = "./Onboarding3.html";
+        }, 3000);
+    </script>    
+</body>
+</html>

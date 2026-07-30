@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>온보딩1 화면</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 375px;
+            height: 812px;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow: hidden;
+            background-color: #ffffff;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Apple SD Gothic Neo",
+                "Noto Sans KR",
+                Arial,
+                sans-serif;
+        }
+
+        /* 모바일 앱 전체 화면 */
+        .app-screen {
+            position: relative;
+            width: 375px;
+            height: 812px;
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+
+        /* 상단 텍스트 영역 */
+        .intro-area {
+            position: absolute;
+            top: 103px;
+            left: 24px;
+            width: 327px;
+        }
+
+        .intro-title {
+            margin: 0;
+            color: #334b83;
+            font-size: 29px;
+            font-weight: 700;
+            line-height: 1.38;
+            letter-spacing: -1.4px;
+        }
+
+        .intro-title-line {
+            display: block;
+        }
+
+        .intro-title-sub {
+            color: #7188c3;
+            font-size: 21px;
+            font-weight: 600;
+            letter-spacing: -1px;
+        }
+
+        .intro-description {
+            width: 325px;
+            margin: 26px 0 0;
+            color: #91a5d5;
+            font-size: 17px;
+            font-weight: 500;
+            line-height: 1.45;
+            letter-spacing: -0.7px;
+        }
+
+        /* 중앙 이미지 영역 */
+        .visual-area {
+            position: absolute;
+            top: 348px;
+            left: 0;
+            width: 375px;
+            height: 293px;
+        }
+
+        /* 연한 배경 도형 */
+        .visual-background {
+            position: absolute;
+            top: 0;
+            left: 81px;
+            width: 365px;
+            height: 281px;
+            background-color: #f0f2fa;
+            border-radius: 50% 0 0 48%;
+            transform: rotate(-1deg);
+        }
+
+        .visual-background::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: -1px;
+            width: 80px;
+            height: 106px;
+            background-color: #ffffff;
+            border-radius: 28px 0 0 0;
+        }
+
+        /* 캐릭터 이미지 */
+        .character-image {
+            position: absolute;
+            top: 13px;
+            left: 65px;
+            z-index: 2;
+            display: block;
+            width: 260px;
+            height: auto;
+        }
+
+        /* 페이지 표시 점 */
+        .pagination {
+            position: absolute;
+            top: 662px;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            width: 375px;
+            height: 14px;
+        }
+
+        .pagination-dot {
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: #edf0f8;
+            border-radius: 50%;
+        }
+
+        .pagination-dot.active {
+            background-color: #5876bb;
+        }
+
+        /* 시작하기 버튼 */
+        .start-button {
+            position: absolute;
+            bottom: 34px;
+            left: 24px;
+            width: 327px;
+            height: 48px;
+            padding: 0;
+            border: 0;
+            border-radius: 12px;
+            background-color: #5876bb;
+            color: #ffffff;
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 48px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .start-button:active {
+            background-color: #4867ad;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-screen">
+
+        <!-- 상단 소개 문구 -->
+        <section class="intro-area">
+            <h1 class="intro-title">
+                <span class="intro-title-line">차박</span>
+
+                <span class="intro-title-line">
+                    어디로
+                    <span class="intro-title-sub">
+                        떠나야 할지 모르겠나요
+                    </span>
+                </span>
+            </h1>
+
+            <p class="intro-description">
+                지도가 빈 위치 앱 및 키워드 검색으로 내가 원하는 장소를 한번에
+            </p>
+        </section>
+
+        <!-- 중앙 캐릭터 이미지 -->
+        <section class="visual-area">
+            <div class="visual-background"></div>
+
+            <img
+                class="character-image"
+                src="./Images/Work1_ill.svg"
+                alt="여행 장소를 검색하는 곰 캐릭터"
+            >
+        </section>
+
+        <!-- 온보딩 페이지 표시 -->
+        <div class="pagination">
+            <span class="pagination-dot active"></span>
+            <span class="pagination-dot"></span>
+            <span class="pagination-dot"></span>
+        </div>
+
+        <!-- 시작 버튼 -->
+        <a href="Login.html">
+            <button type="button" class="start-button">
+                시작하기
+            </button>
+        </a>
+    </div>
+    <script>
+        setTimeout(function () {
+            window.location.href = "./Onboarding2.html";
+        }, 3000);
+    </script>    
+</body>
+</html>

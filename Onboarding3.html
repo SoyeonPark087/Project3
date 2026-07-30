@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>온보딩3 화면</title>
+
+    <style>
+        /* 기본 설정 */
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 375px;
+            height: 812px;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow: hidden;
+            background-color: #ffffff;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Apple SD Gothic Neo",
+                "Noto Sans KR",
+                Arial,
+                sans-serif;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        /* 모바일 앱 전체 화면 */
+        .app-screen {
+            position: relative;
+            width: 375px;
+            height: 812px;
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+
+        /* 상단 텍스트 영역 */
+        .intro-area {
+            position: absolute;
+            top: 101px;
+            left: 24px;
+            width: 327px;
+            z-index: 3;
+        }
+
+        .intro-title {
+            margin: 0;
+            color: #334a80;
+            font-size: 29px;
+            font-weight: 700;
+            line-height: 1.38;
+            letter-spacing: -1.3px;
+        }
+
+        .title-first-line {
+            display: block;
+            color: #6f88c4;
+            font-size: 21px;
+            font-weight: 600;
+            line-height: 1.35;
+            letter-spacing: -0.8px;
+        }
+
+        .title-second-line {
+            display: block;
+            margin-top: 1px;
+            white-space: nowrap;
+        }
+
+        .title-light {
+            color: #7088c2;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: -0.8px;
+        }
+
+        .intro-description {
+            width: 320px;
+            margin: 23px 0 0;
+            color: #91a5d3;
+            font-size: 17px;
+            font-weight: 500;
+            line-height: 1.48;
+            letter-spacing: -0.7px;
+        }
+
+        /* 중앙 이미지 영역 */
+        .visual-area {
+            position: absolute;
+            top: 347px;
+            left: 0;
+            width: 375px;
+            height: 277px;
+            overflow: hidden;
+        }
+
+        /* 연한 배경 도형 */
+        .visual-background {
+            position: absolute;
+            top: 27px;
+            left: -104px;
+            width: 390px;
+            height: 205px;
+            background-color: #f0f2fa;
+            border-radius: 0 55% 48% 0;
+            transform: rotate(3deg);
+        }
+
+        /* 배경 아래쪽 곡선 보정 */
+        .visual-background::after {
+            content: "";
+            position: absolute;
+            right: -37px;
+            bottom: -83px;
+            width: 330px;
+            height: 111px;
+            background-color: #ffffff;
+            border-radius: 50% 50% 0 0;
+            transform: rotate(-4deg);
+        }
+
+        /* 곰, 모닥불, 통나무, 아이콘 이미지 */
+        .character-image {
+            position: absolute;
+            top: 17px;
+            left: 69px;
+            z-index: 2;
+            display: block;
+            width: 239px;
+            height: auto;
+        }
+
+        /* 페이지 표시 점 */
+        .pagination {
+            position: absolute;
+            top: 663px;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            width: 375px;
+            height: 13px;
+        }
+
+        .pagination-dot {
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: #edf0f8;
+            border-radius: 50%;
+        }
+
+        .pagination-dot.active {
+            background-color: #5775ba;
+        }
+
+        /* 시작하기 버튼 */
+        .start-button {
+            position: absolute;
+            bottom: 34px;
+            left: 24px;
+            width: 327px;
+            height: 48px;
+            padding: 0;
+            border: 0;
+            border-radius: 12px;
+            background-color: #5775ba;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 48px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .start-button:active {
+            background-color: #4866aa;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-screen">
+
+        <!-- 상단 안내 문구 -->
+        <section class="intro-area">
+            <h1 class="intro-title">
+                <span class="title-first-line">
+                    일상이 바쁠땐 실시간
+                </span>
+
+                <span class="title-second-line">
+                    라이브로 대리만족
+                    <span class="title-light">하세요</span>
+                </span>
+            </h1>
+
+            <p class="intro-description">
+                라이브로 나를 뽐내고 시청자들과 소통하는 즐거움!
+            </p>
+        </section>
+
+        <!-- 중앙 캐릭터 이미지 -->
+        <section class="visual-area">
+            <div class="visual-background"></div>
+
+            <img
+                class="character-image"
+                src="./Images/Work3_ill.svg"
+                alt="모닥불 앞에서 라이브 방송을 진행하는 곰 캐릭터"
+            >
+        </section>
+
+        <!-- 온보딩 페이지 표시 -->
+        <div class="pagination">
+            <span class="pagination-dot"></span>
+            <span class="pagination-dot"></span>
+            <span class="pagination-dot active"></span>
+        </div>
+
+        <!-- 시작하기 버튼 -->
+        <a href="Login.html">
+            <button type="button" class="start-button">
+                시작하기
+            </button>
+        </a>
+    </div>
+    <script>
+        setTimeout(function () {
+            window.location.href = "./Login.html";
+        }, 3000);
+    </script>
+</body>
+</html>
