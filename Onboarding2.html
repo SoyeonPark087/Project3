@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
     >
     <title>온보딩2 화면</title>
 
@@ -41,8 +41,8 @@
         /* 모바일 앱 전체 화면 */
         .app-screen {
             position: relative;
-            width: 375px;
-            height: 812px;
+            width: 100%;
+            height: 100svh;
             overflow: hidden;
             background-color: #ffffff;
         }
@@ -144,15 +144,17 @@
 
         /* 페이지 표시 점 */
         .pagination {
-            position: absolute;
-            top: 663px;
-            left: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 16px;
-            width: 375px;
-            height: 13px;
+            position:absolute;
+            left:0;
+            bottom:112px;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            gap:16px;
+
+            width:100%;
+            height:13px;
         }
 
         .pagination-dot {
@@ -168,22 +170,26 @@
         }
 
         /* 시작하기 버튼 */
-        .start-button {
-            position: absolute;
-            bottom: 34px;
-            left: 24px;
-            width: 327px;
-            height: 48px;
-            padding: 0;
+        .start-button{
+            position:absolute;
+            left:24px;
+            right:24px;
+            bottom:calc(20px + env(safe-area-inset-bottom));
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            height:48px;
             border: 0;
-            border-radius: 12px;
-            background-color: #5775ba;
-            color: #ffffff;
-            font-size: 15px;
-            font-weight: 700;
-            line-height: 48px;
-            text-align: center;
-            cursor: pointer;
+            border-radius:12px;
+            background:#5775ba;
+
+            color:#fff;
+            font-size:15px;
+            font-weight:700;
+
+            text-decoration:none;
         }
 
         .start-button:active {
@@ -231,10 +237,8 @@
         </div>
 
         <!-- 시작하기 버튼 -->
-        <a href="Login.html">
-            <button type="button" class="start-button">
-                시작하기
-            </button>
+        <a href="./Login.html" class="start-button">
+            시작하기
         </a>
     </div>
     <script>
