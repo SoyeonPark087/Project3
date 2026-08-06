@@ -1,0 +1,34 @@
+/* css 한글 깨지지 않게 설정하는 것 */
+@charset "utf-8";
+body{
+    font-family: "맑은 고딕", "malgun gothic", "sans-serif"
+}
+/* 여백 초기화 */
+*{margin: 0; padding: 0;}
+/* 버튼 초기화 */
+button{
+    border: none;
+    background-color: none;
+}
+
+#header{
+    width: 100%;
+    height: 45px;
+    background-color: #33353f;
+    /*자식 요소 옆으로 나란히 배치*/
+    display: flex;
+    /*자식 요소들을 양 옆과 정가운데 맞춰 정렬*/
+    justify-content: space-between;
+}
+
+#header button img{
+    width: 45px;
+}
+
+#header h1 a img{
+    width: 90px;
+}
+
+.swiper .swiper-wrapper .swiper-slide img{
+    width: 100%;
+}

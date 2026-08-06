@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <title>서울아산병원</title>
+
+    <!-- Swiper CSS -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    >
+
+    <!-- 사용자 CSS -->
+    <link rel="stylesheet" href="./css/main1.css">
+</head>
+
+<body>
+    <div class="app">
+        <!-- 헤더 -->
+        <header class="header">
+            <div class="header__inner">
+                <!-- 전체 메뉴 -->
+                <a
+                    href="./menu.html"
+                    class="header__button"
+                    aria-label="전체 메뉴로 이동"
+                >
+                    <img
+                        src="./Images/menu.png"
+                        alt=""
+                    >
+                </a>
+
+                <!-- 중앙 로고 -->
+                <h1 class="header__logo">
+                    <a
+                        href="./index.html"
+                        aria-label="서울아산병원 메인으로 이동"
+                    >
+                        <img
+                            src="./Images/logo.png"
+                            alt="서울아산병원 Asan Medical Center"
+                        >
+                    </a>
+                </h1>
+
+                <!-- 검색 -->
+                <a
+                    href="./search.html"
+                    class="header__button"
+                    aria-label="검색 화면으로 이동"
+                >
+                    <img
+                        src="./Images/search.png"
+                        alt=""
+                    >
+                </a>
+            </div>
+        </header>
+
+        <!-- 메인 콘텐츠 -->
+        <main class="main">
+            <section
+                class="main-visual"
+                aria-label="서울아산병원 주요 소식"
+            >
+                <div class="swiper main-banner-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- 슬라이드 1 -->
+                        <div class="swiper-slide">
+                            <a
+                                href="./news01.html"
+                                class="main-banner__link"
+                                aria-label="서울아산병원 평가 소식 보기"
+                            >
+                                <img
+                                    src="./Images/main1.png"
+                                    alt="서울아산병원 주요 평가 소식"
+                                    class="main-banner__image"
+                                >
+                            </a>
+                        </div>
+
+                        <!-- 슬라이드 2 -->
+                        <div class="swiper-slide">
+                            <a
+                                href="./news02.html"
+                                class="main-banner__link"
+                                aria-label="서울아산병원 건강 정보 보기"
+                            >
+                                <img
+                                    src="./Images/main2.png"
+                                    alt="서울아산병원 건강 정보"
+                                    class="main-banner__image"
+                                >
+                            </a>
+                        </div>
+
+                        <!-- 슬라이드 3 -->
+                        <div class="swiper-slide">
+                            <a
+                                href="./news03.html"
+                                class="main-banner__link"
+                                aria-label="서울아산병원 의료 서비스 보기"
+                            >
+                                <img
+                                    src="./Images/main3.png"
+                                    alt="서울아산병원 의료 서비스"
+                                    class="main-banner__image"
+                                >
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 이전 버튼 -->
+                    <button
+                        type="button"
+                        class="swiper-button-prev"
+                        aria-label="이전 배너"
+                    ></button>
+
+                    <!-- 다음 버튼 -->
+                    <button
+                        type="button"
+                        class="swiper-button-next"
+                        aria-label="다음 배너"
+                    ></button>
+
+                    <!-- 페이지네이션 -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Swiper JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- 사용자 JavaScript -->
+    <script src=".js/main1.js"></script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+/* ========================================
+   기본 초기화
+======================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100svh;
+    overflow-x: hidden;
+
+    background-color: #ffffff;
+    color: #222222;
+
+    font-family:
+        Pretendard,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Apple SD Gothic Neo",
+        "Noto Sans KR",
+        sans-serif;
+
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    border: 0;
+    background: none;
+    font: inherit;
+    cursor: pointer;
+}
+
+img {
+    display: block;
+}
+
+
+/* ========================================
+   모바일 앱 전체 영역
+======================================== */
+.app {
+    width: 100%;
+    min-height: 100svh;
+    background-color: #ffffff;
+}
+
+
+/* ========================================
+   헤더
+======================================== */
+.header {
+    position: relative;
+    z-index: 100;
+
+    width: 100%;
+    padding-top: env(safe-area-inset-top);
+
+    background-color: #30323d;
+}
+
+.header__inner {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 40px;
+    padding: 0 8px;
+}
+
+
+/* 헤더 좌우 아이콘 */
+.header__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+}
+
+.header__button img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.header__button:active {
+    opacity: 0.65;
+}
+
+
+/* 중앙 로고 */
+.header__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: translate(-50%, -50%);
+}
+
+.header__logo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__logo img {
+    width: auto;
+    height: 25px;
+    object-fit: contain;
+}
+
+
+/* ========================================
+   메인
+======================================== */
+.main {
+    width: 100%;
+}
+
+
+/* ========================================
+   메인 배너
+======================================== */
+.main-visual {
+    width: 100%;
+    overflow: hidden;
+    background-color: #6d4db5;
+}
+
+.main-banner-swiper {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 640 / 385;
+
+    overflow: hidden;
+}
+
+.main-banner-swiper .swiper-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.main-banner-swiper .swiper-slide {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.main-banner__link {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+
+.main-banner__image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    user-select: none;
+    pointer-events: none;
+    -webkit-user-drag: none;
+}
+
+
+/* ========================================
+   이전·다음 버튼
+======================================== */
+.main-banner-swiper .swiper-button-prev,
+.main-banner-swiper .swiper-button-next {
+    width: 44px;
+    height: 64px;
+    margin-top: 0;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    transform: translateY(-50%);
+}
+
+.main-banner-swiper .swiper-button-prev {
+    left: 2px;
+}
+
+.main-banner-swiper .swiper-button-next {
+    right: 2px;
+}
+
+.main-banner-swiper .swiper-button-prev::after,
+.main-banner-swiper .swiper-button-next::after {
+    font-size: 36px;
+    font-weight: 300;
+}
+
+
+/* 버튼을 누르는 동안 표시 */
+.main-banner-swiper .swiper-button-prev:active,
+.main-banner-swiper .swiper-button-next:active {
+    color: #ffffff;
+}
+
+
+/* ========================================
+   페이지네이션
+======================================== */
+.main-banner-swiper .swiper-pagination {
+    bottom: 9px;
+}
+
+.main-banner-swiper .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    margin: 0 4px;
+
+    background-color: rgba(47, 52, 79, 0.5);
+    opacity: 1;
+}
+
+.main-banner-swiper .swiper-pagination-bullet-active {
+    background-color: #168cff;
+}
+
+
+/* ========================================
+   접근성 포커스
+======================================== */
+.header__button:focus-visible,
+.header__logo a:focus-visible,
+.main-banner__link:focus-visible,
+.swiper-button-prev:focus-visible,
+.swiper-button-next:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: -2px;
+}
