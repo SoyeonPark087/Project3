@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tetris Game</title>
+
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+
+  <main class="game-container">
+
+    <section class="game-area">
+      <canvas id="gameCanvas"></canvas>
+
+      <div id="gameOverScreen" class="game-over-screen hidden">
+        <h2>GAME OVER</h2>
+        <p>최종 점수</p>
+        <strong id="finalScore">0</strong>
+
+        <button id="restartButton">
+          다시 시작
+        </button>
+      </div>
+    </section>
+
+
+    <aside class="side-panel">
+
+      <div class="game-title">
+        <h1>TETRIS</h1>
+        <p>BLOCK PUZZLE</p>
+      </div>
+
+
+      <div class="info-box">
+        <span>SCORE</span>
+        <strong id="score">0</strong>
+      </div>
+
+      <div class="info-box">
+        <span>LINES</span>
+        <strong id="lines">0</strong>
+      </div>
+
+      <div class="info-box">
+        <span>LEVEL</span>
+        <strong id="level">1</strong>
+      </div>
+
+
+      <div class="next-box">
+        <span>NEXT</span>
+
+        <canvas
+          id="nextCanvas"
+          width="120"
+          height="120">
+        </canvas>
+      </div>
+
+
+      <div class="controls">
+
+        <h2>CONTROLS</h2>
+
+        <div class="control-row">
+          <span>← →</span>
+          <p>이동</p>
+        </div>
+
+        <div class="control-row">
+          <span>↑</span>
+          <p>회전</p>
+        </div>
+
+        <div class="control-row">
+          <span>↓</span>
+          <p>빠르게 내리기</p>
+        </div>
+
+        <div class="control-row">
+          <span>SPACE</span>
+          <p>바로 내리기</p>
+        </div>
+
+        <div class="control-row">
+          <span>P</span>
+          <p>일시정지</p>
+        </div>
+
+      </div>
+
+
+      <button id="pauseButton" class="pause-button">
+        일시정지
+      </button>
+
+    </aside>
+
+  </main>
+
+
+  <script src="./js/main.js"></script>
+
+</body>
+</html>

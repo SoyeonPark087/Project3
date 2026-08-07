@@ -1,0 +1,379 @@
+@charset "utf-8";
+body{
+    font-family: "맑은 고딕", "malgun gothic", "sans-serif";
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    radial-gradient(circle at top, #242b55 0%, #101426 50%, #070910 100%);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  color: #ffffff;
+}
+
+
+/* =====================================
+   전체 게임
+===================================== */
+
+.game-container {
+  display: flex;
+  gap: 24px;
+
+  padding: 28px;
+
+  background: rgba(15, 19, 37, 0.92);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.55);
+}
+
+
+/* =====================================
+   게임 영역
+===================================== */
+
+.game-area {
+  position: relative;
+
+  width: 300px;
+  height: 600px;
+
+  overflow: hidden;
+
+  border-radius: 12px;
+
+  background: #090c17;
+
+  border:
+    2px solid rgba(255, 255, 255, 0.15);
+}
+
+
+#gameCanvas {
+  display: block;
+
+  width: 300px;
+  height: 600px;
+
+  background: #090c17;
+}
+
+
+/* =====================================
+   GAME OVER
+===================================== */
+
+.game-over-screen {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(5, 7, 15, 0.9);
+
+  backdrop-filter: blur(5px);
+
+  z-index: 10;
+}
+
+
+.game-over-screen.hidden {
+  display: none;
+}
+
+
+.game-over-screen h2 {
+  margin-bottom: 20px;
+
+  font-size: 32px;
+
+  color: #ff5577;
+}
+
+
+.game-over-screen p {
+  margin-bottom: 5px;
+
+  font-size: 14px;
+  color: #aeb4c7;
+}
+
+
+.game-over-screen strong {
+  margin-bottom: 30px;
+
+  font-size: 42px;
+}
+
+
+.game-over-screen button {
+  width: 150px;
+  height: 48px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #655cff;
+
+  color: white;
+
+  font-size: 15px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+
+.game-over-screen button:hover {
+  transform: translateY(-2px);
+
+  background: #756dff;
+}
+
+
+/* =====================================
+   오른쪽 패널
+===================================== */
+
+.side-panel {
+  width: 190px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+
+/* 제목 */
+
+.game-title {
+  margin-bottom: 4px;
+}
+
+
+.game-title h1 {
+  font-size: 34px;
+
+  letter-spacing: 6px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #56d8ff,
+      #786cff,
+      #ff5da2
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+
+.game-title p {
+  margin-top: 4px;
+
+  font-size: 10px;
+
+  letter-spacing: 4px;
+
+  color: #777e99;
+}
+
+
+/* 정보 박스 */
+
+.info-box,
+.next-box,
+.controls {
+  padding: 14px;
+
+  background: #171c31;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 12px;
+}
+
+
+.info-box {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.info-box span,
+.next-box > span {
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  color: #838ba5;
+}
+
+
+.info-box strong {
+  font-size: 20px;
+}
+
+
+/* =====================================
+   다음 블록
+===================================== */
+
+.next-box {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+.next-box > span {
+  align-self: flex-start;
+}
+
+
+#nextCanvas {
+  width: 120px;
+  height: 120px;
+
+  background: #0e1220;
+
+  border-radius: 8px;
+}
+
+
+/* =====================================
+   조작법
+===================================== */
+
+.controls h2 {
+  margin-bottom: 12px;
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  color: #838ba5;
+}
+
+
+.control-row {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 9px;
+}
+
+
+.control-row:last-child {
+  margin-bottom: 0;
+}
+
+
+.control-row span {
+  padding: 4px 7px;
+
+  background: #242a45;
+
+  border-radius: 5px;
+
+  font-size: 10px;
+
+  color: #ced2e0;
+}
+
+
+.control-row p {
+  font-size: 11px;
+
+  color: #9299af;
+}
+
+
+/* =====================================
+   일시정지
+===================================== */
+
+.pause-button {
+  height: 42px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #2a304d;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+
+.pause-button:hover {
+  background: #373e61;
+}
+
+
+/* =====================================
+   작은 화면
+===================================== */
+
+@media (max-width: 600px) {
+
+  body {
+    align-items: flex-start;
+
+    padding: 20px 0;
+  }
+
+
+  .game-container {
+    transform: scale(0.82);
+
+    transform-origin: top center;
+  }
+
+}
