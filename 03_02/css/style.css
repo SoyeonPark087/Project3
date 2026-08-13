@@ -71,18 +71,14 @@ footer{
     display: flex;
 }
 
-footer .right{
-    width: 1000px;
-    height: 100px;
-}
 footer .logo{
     width: 200px;
     background-color: lawngreen;
 }
 
-footer .logo{
-    width: 200px;
-    background-color: lawngreen;
+footer .right{
+    width: 1000px;
+    height: 100px;
 }
 
 footer .copyright{
