@@ -1,0 +1,93 @@
+@charset "utf-8";
+body{
+    font-family: "맑은 고딕", "malgun gothic", "sans-serif";
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+    width: 1200px;
+    height: 100px;
+    background-color: antiquewhite;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo{
+    width: 200px;
+    height: 40px;
+    background-color: beige;
+}
+
+nav {
+    width: 1000px;
+    height: 100px;
+    background-color: cadetblue;
+}
+.slide{
+    width: 1200px;
+    height: 300px;
+    background-color: darkblue;
+    margin: 0 auto;
+}
+
+.contents{
+    width: 1200px;
+    height: 200px;
+    background-color: firebrick;
+    margin: 0 auto;
+    display: flex;
+}
+
+.contents .notice{
+    width: 400px;
+    height: 200px;
+    background-color: gold;
+}
+
+.contents .banner{
+    width: 400px;
+    height: 200px;
+    background-color: hotpink;
+}
+
+.contents .go{
+    width: 400px;
+    height: 200px;
+    background-color: indianred;
+}
+
+footer{
+    width: 1200px;
+    height: 100px;
+    background-color: khaki;
+    margin: 0 auto;
+    display: flex;
+}
+
+footer .right{
+    width: 1000px;
+    height: 50px;
+}
+footer .logo{
+    width: 200px;
+    background-color: lawngreen;
+}
+
+footer .copyright{
+    width: 1000px;
+    height: 50px;
+    background-color: magenta;
+}
+
+footer .menu{
+    width: 1000px;
+    height: 50px;
+    background-color: navajowhite;
+}
