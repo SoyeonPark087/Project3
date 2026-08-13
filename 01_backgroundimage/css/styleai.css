@@ -1,0 +1,267 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, "Noto Sans KR", sans-serif;
+  background: #ffffff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+
+/* =========================
+   QUICK MENU SECTION
+========================= */
+
+.quick-menu-section {
+  width: 100%;
+  padding: 46px 0 55px;
+  border-bottom: 1px solid #dddddd;
+  background: #ffffff;
+}
+
+.quick-menu {
+  display: flex;
+
+  width: calc(100% - 86px);
+  max-width: 1180px;
+  height: 160px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================
+   MENU ITEM
+========================= */
+
+.quick-menu-item {
+  position: relative;
+
+  flex: 1;
+  height: 160px;
+
+  overflow: hidden;
+}
+
+
+/* 각 메뉴 배경색 */
+
+.quick-menu-item.reserve {
+  background: #9d825f;
+}
+
+.quick-menu-item.point {
+  background: #454545;
+}
+
+.quick-menu-item.delivery {
+  background: #cf0000;
+}
+
+
+/* =========================
+   LINK
+========================= */
+
+.quick-menu-link {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 26px 30px;
+
+  color: #ffffff;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.menu-text {
+  position: relative;
+  z-index: 2;
+}
+
+.menu-text h2 {
+  font-size: 24px;
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing: -1px;
+}
+
+.menu-text p {
+  margin-top: 7px;
+
+  font-size: 14px;
+  line-height: 1;
+
+  font-weight: 400;
+}
+
+
+/* =========================
+   ARROW
+========================= */
+
+.menu-arrow {
+  position: absolute;
+
+  left: 30px;
+  bottom: 37px;
+
+  width: 40px;
+  height: 9px;
+
+  transition: transform 0.3s ease;
+}
+
+
+/* 가로 선 */
+
+.menu-arrow::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 4px;
+
+  width: 39px;
+  height: 1px;
+
+  background: #ffffff;
+}
+
+
+/* 화살표 끝부분 */
+
+.menu-arrow::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+  top: 2px;
+
+  width: 6px;
+  height: 6px;
+
+  border-top: 1px solid #ffffff;
+
+  transform: rotate(45deg);
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.menu-image {
+  position: absolute;
+
+  top: 50%;
+  right: 59px;
+
+  width: 74px;
+
+  transform: translateY(-50%);
+
+  object-fit: contain;
+
+  transition: transform 0.3s ease;
+}
+
+
+/* SAVE POINT 이미지 */
+
+.point .menu-image {
+  width: 72px;
+}
+
+
+/* DELIVERY 로고 */
+
+.delivery .menu-image {
+  right: 73px;
+}
+
+.delivery-logo {
+  width: 112px;
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+.quick-menu-link:hover .menu-arrow {
+  transform: translateX(5px);
+}
+
+.quick-menu-link:hover .menu-image {
+  transform: translateY(-50%) scale(1.05);
+}
+
+
+/* =========================
+   화면이 좁아졌을 때
+========================= */
+
+@media (max-width: 900px) {
+
+  .quick-menu {
+    width: calc(100% - 40px);
+  }
+
+  .quick-menu-link {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .menu-text h2 {
+    font-size: 22px;
+  }
+
+  .menu-text p {
+    font-size: 13px;
+  }
+
+  .menu-arrow {
+    left: 22px;
+  }
+
+  .menu-image {
+    right: 25px;
+    width: 65px;
+  }
+
+  .delivery .menu-image {
+    right: 25px;
+  }
+
+  .delivery-logo {
+    width: 95px;
+  }
+
+}
