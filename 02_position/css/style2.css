@@ -1,0 +1,108 @@
+@charset "utf-8";
+
+body {
+    font-family: "맑은 고딕", "malgun gothic", "Sans-serif";
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.parent {
+    width: 1000px;
+    height: 1000px;
+    margin: 0 auto;
+    background-color: skyblue;
+    position: relative;
+}
+
+.parent div{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+}
+
+
+.purple {
+    background-color: purple;
+}
+
+.p1 {
+    left: 0;
+    top: 0;
+}
+
+.p2 {
+    right: 0;
+    top: 0;
+}
+
+.p3 {
+    left: 0;
+    bottom: 0;
+}
+
+.p4 {
+    right: 0;
+    bottom: 0;
+}
+
+
+.yellow {
+    background-color: yellow;
+}
+
+.y1 {
+    left: 100px;
+    top: 100px;
+}
+
+.y2 {
+    right: 100px;
+    top: 100px;
+}
+
+.y3 {
+    left: 100px;
+    bottom: 100px;
+}
+
+.y4 {
+    right: 100px;
+    bottom: 100px;
+}
+
+
+.red {
+    background-color: red;
+}
+
+.r1 {
+    left: 200px;
+    top: 200px;
+}
+
+.r2 {
+    right: 200px;
+    top: 200px;
+}
+
+.r3 {
+    left: 200px;
+    bottom: 200px;
+}
+
+.r4 {
+    right: 200px;
+    bottom: 200px;
+}
+
+
+.black {
+    background-color: black;
+
+    left: 400px;
+    top: 400px;
+}
