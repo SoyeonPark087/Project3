@@ -577,7 +577,7 @@ img {
 
     color: #5e4b40;
 
-    font-size: 11px;
+    font-size: 16px;
     font-weight: 500;
 
     transition: color 0.2s ease;
@@ -1545,8 +1545,8 @@ img {
 
     color: #6f5c50;
 
-    font-size: 11px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 400;
 
     text-decoration: none;
 
@@ -2179,4 +2179,461 @@ img {
     font-size: 11px;
     font-weight: 400;
     line-height: 1.5;
+}
+
+/* ==========================================================
+   반응형 미디어쿼리 (모바일 전용 - max-width: 768px)
+========================================================== */
+
+@media screen and (max-width: 768px) {
+    /* ------------------------------------------------------
+       0. 기본 레이아웃 & 스크롤바 안 보이게 숨기기
+    ------------------------------------------------------ */
+    body {
+        min-width: 100% !important;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .header__inner,
+    .hero__inner,
+    .intro__inner,
+    .recommend-menu__inner,
+    .howto__inner,
+    .benefit__inner,
+    .store-finder__inner,
+    .faq__inner,
+    .cafe-banner__inner,
+    .footer__inner {
+        width: 100% !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        height: auto !important;
+    }
+
+    /* 가로 스크롤 영역 - 스크롤 동작은 유지하고 스크롤바만 감춤 */
+    .howto__steps::-webkit-scrollbar {
+        display: none !important; /* Chrome, Safari, Opera */
+    }
+    .howto__steps {
+        -ms-overflow-style: none !important;  /* IE and Edge */
+        scrollbar-width: none !important;  /* Firefox */
+    }
+
+    /* ------------------------------------------------------
+       1. Header
+    ------------------------------------------------------ */
+    .header {
+        height: 60px;
+        padding: 8px;
+    }
+    .header__inner {
+        justify-content: space-between;
+    }
+    .header__logo img {
+        width: 110px;
+    }
+    .header__nav,
+    .header__store {
+        display: none !important;
+    }
+    .header__inner::after {
+        content: "";
+        display: block;
+        width: 24px;
+        height: 18px;
+        background: linear-gradient(
+            to bottom,
+            #3e2b22 0%, #3e2b22 20%,
+            transparent 20%, transparent 40%,
+            #3e2b22 40%, #3e2b22 60%,
+            transparent 60%, transparent 80%,
+            #3e2b22 80%, #3e2b22 100%
+        );
+        cursor: pointer;
+    }
+
+    /* ------------------------------------------------------
+       2. Hero Section (이미지 위 텍스트 오버레이 구현)
+    ------------------------------------------------------ */
+    .hero {
+        height: auto;
+        padding: 20px 0 32px;
+    }
+    .hero__inner {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        min-height: 480px;
+        padding: 0 !important;
+    }
+    /* 배경 이미지 레이어 */
+    .hero__visual {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin-top: 0;
+        z-index: 1;
+    }
+    .hero__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    /* 이미지 위 가독성을 위한 그라데이션 오버레이 */
+    .hero__visual::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    /* 이미지 위에 올라가는 텍스트 콘텐츠 */
+    .hero__content {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        padding: 32px 20px;
+        margin-top: auto; /* 하단 배치 */
+    }
+    .hero__eyebrow {
+        font-size: 12px;
+        color: #f7a072;
+        background: #FAF4EA(0,0,0,0.4);
+        backdrop-filter: blur(4px);
+    }
+    .hero__title {
+        font-size: 28px;
+        line-height: 1.25;
+        color: #4B2E1F;
+        margin-bottom: 12px;
+    }
+    .hero__subtitle {
+        font-size: 15px;
+        color: #4B2E1F;
+        margin-bottom: 8px;
+    }
+    .hero__description {
+        font-size: 13px;
+        color: #4B2E1F(255,255,255,0.8);
+        line-height: 1.3;
+        margin-bottom: 64px;
+    }
+    .hero__buttons {
+        width: 100%;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .hero__button {
+        width: 100%;
+        height: 44px;
+    }
+.intro {
+        height: auto;
+        padding: 40px 0;
+    }
+    .intro__inner {
+        padding-top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .intro__logo {
+        margin: 0 auto 16px;
+    }
+    .intro__title {
+        font-size: 22px;
+        text-align: center;
+    }
+    .intro__description {
+        font-size: 13px;
+        text-align: center;
+    }
+    .intro__features {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px 12px;
+        margin-top: 32px;
+        width: 100%;
+    }
+    .intro__feature {
+        width: 100%;
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .intro__feature:not(:last-child)::after {
+        display: none;
+    }
+    .intro__icon-box {
+        margin: 0 auto 12px;
+    }
+
+    /* ------------------------------------------------------
+       4. Recommend Menu Section (전체보기 글자 크기/위치 조율)
+    ------------------------------------------------------ */
+    .recommend-menu {
+        height: auto;
+        padding: 40px 0;
+    }
+    .recommend-menu__inner {
+        padding-top: 0;
+    }
+    .recommend-menu__header {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    .recommend-menu__title {
+        font-size: 20px;
+    }
+    /* 더보기 버튼 겹침 방지 및 규격 축소 */
+    .recommend-menu__more {
+        position: static !important;
+        transform: none !important;
+        font-size: 12px !important;
+        white-space: nowrap;
+        color: #888888;
+    }
+    .recommend-menu__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    .menu-card {
+        width: 100%;
+        height: auto;
+        padding: 12px;
+    }
+    .menu-card__image-wrap {
+        height: 130px;
+    }
+
+    /* ------------------------------------------------------
+       5. How To Use Section (스크롤 삭제 및 박스 세로 정렬)
+    ------------------------------------------------------ */
+    .howto {
+        height: auto;
+        padding: 40px 0;
+    }
+    .howto__inner {
+        padding-top: 0;
+    }
+    .howto__title {
+        font-size: 22px;
+        margin-bottom: 24px;
+        text-align: center;
+    }
+    /* 가로 스크롤 대신 세로 1열 카드 배치 */
+    .howto__steps {
+        display: flex;
+        flex-direction: column;
+        overflow-x: visible;
+        gap: 12px;
+        width: 100%;
+    }
+    .howto-card {
+        flex: 1 1 100%;
+        width: 100%;
+        height: auto;
+        min-height: 80px;
+        padding: 16px;
+    }
+    .howto__arrow {
+        display: none; /* 세로 배치 시 화살표 제거 */
+    }
+
+    /* ------------------------------------------------------
+       6. Benefit Section
+    ------------------------------------------------------ */
+    .benefit {
+        height: auto;
+        padding: 40px 0;
+    }
+    .benefit__inner {
+        padding-top: 0;
+        text-align: center;
+    }
+    .benefit__title {
+        font-size: 22px;
+    }
+    .benefit__list {
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+        margin-top: 32px;
+    }
+    .benefit__item {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .benefit__item:not(:last-child)::after {
+        display: none;
+    }
+
+    /* ------------------------------------------------------
+       7. Store Finder Section
+    ------------------------------------------------------ */
+    .store-finder {
+        height: auto;
+        padding: 40px 0;
+    }
+    .store-finder__inner {
+        padding-top: 0;
+    }
+    .store-finder__title {
+        font-size: 22px;
+    }
+    .store-finder__contents {
+        flex-direction: column;
+        height: auto;
+        margin-top: 24px;
+        gap: 16px;
+    }
+    .store-card {
+        width: 100%;
+        height: auto;
+        padding: 24px 20px;
+    }
+    .store-map {
+        display: block !important;
+        width: 100% !important;
+        min-height: 280px !important;
+        height: 280px !important;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    /* ------------------------------------------------------
+       8. FAQ Section (전체보기 글자 크기/위치 조율)
+    ------------------------------------------------------ */
+    .faq {
+        height: auto;
+        padding: 40px 0;
+    }
+    .faq__inner {
+        padding-top: 0;
+    }
+    .faq__header {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    .faq__title {
+        font-size: 20px;
+    }
+    .faq__more {
+        position: static !important;
+        transform: none !important;
+        font-size: 12px !important;
+        white-space: nowrap;
+        color: #888888;
+    }
+    .faq__list {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    /* ------------------------------------------------------
+       9. Cafe Banner Section (배너 이미지 위 글자 겹침)
+    ------------------------------------------------------ */
+    .cafe-banner {
+        height: auto;
+        padding: 0;
+    }
+    .cafe-banner__inner {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-height: 320px;
+        justify-content: center;
+        border-radius: 16px;
+        overflow: hidden;
+        padding: 32px 20px !important;
+    }
+    .cafe-banner__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+    .cafe-banner__background img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .cafe-banner__background::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.55);
+    }
+    .cafe-banner__content {
+        position: relative;
+        z-index: 2;
+        margin-left: 0;
+        text-align: center;
+    }
+    .cafe-banner__title {
+        font-size: 22px;
+        color: #ffffff;
+    }
+    .cafe-banner__subtitle {
+        font-size: 14px;
+        color: #e0e0e0;
+        margin-top: 8px;
+    }
+    .cafe-banner__buttons {
+        position: relative;
+        z-index: 2;
+        right: auto;
+        bottom: auto;
+        width: 100%;
+        flex-direction: column;
+        margin-top: 24px;
+        gap: 8px;
+    }
+    .cafe-banner__button {
+        width: 100%;
+        height: 44px;
+    }
+
+    /* ------------------------------------------------------
+       10. Footer Section
+    ------------------------------------------------------ */
+    .footer {
+        height: auto;
+        padding: 40px 0 24px;
+    }
+    .footer__top {
+        flex-direction: column;
+        height: auto;
+        gap: 32px;
+    }
+    .footer__nav {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px 16px;
+    }
+    .footer__menu {
+        padding-left: 0;
+        border-left: none;
+    }
 }
