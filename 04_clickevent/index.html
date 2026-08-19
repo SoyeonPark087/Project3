@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery 애니메이션 관련 메서드</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- JavaScript -->
+    <script src="./js/script.js" defer></script>
+</head>
+
+<body>
+
+    <h1>[ jQuery 애니메이션 관련 메서드 ]</h1>
+
+    <ol>
+        <li>$('대상').fadeIn();</li>
+        <li>$('대상').fadeOut();</li>
+        <li>$('대상').fadeToggle();</li>
+        <li>$('대상').slideUp();</li>
+        <li>$('대상').slideDown();</li>
+        <li>$('대상').slideToggle();</li>
+        <li>$('대상').animate();</li>
+    </ol>
+
+    <!-- 버튼 -->
+    <div class="button-wrap">
+        <button id="fadeInBtn">fadeIn</button>
+        <button id="fadeOutBtn">fadeOut</button>
+        <button id="fadeToggleBtn">fadeToggle</button>
+
+        <button id="slideUpBtn">slideUp</button>
+        <button id="slideDownBtn">slideDown</button>
+        <button id="slideToggleBtn">slideToggle</button>
+
+        <button id="ani1Btn">ani1</button>
+        <button id="ani2Btn">ani2</button>
+    </div>
+
+    <hr>
+
+    <!-- fade 영역 -->
+    <div class="box-group fade-group">
+
+        <div class="box fade-box">
+            fadeIn / fadeOut
+        </div>
+
+        <div class="box fade-toggle-box">
+            fadeToggle
+        </div>
+
+    </div>
+
+
+    <!-- slide / animate 영역 -->
+    <div class="box-group animation-group">
+
+        <div class="box slide-box">
+            slideUp / slideDown
+        </div>
+
+        <div class="box slide-toggle-box">
+            slideToggle
+        </div>
+
+        <div class="box animate-box">
+            Animation
+        </div>
+
+    </div>
+
+</body>
+</html>
