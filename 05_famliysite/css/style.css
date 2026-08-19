@@ -1,0 +1,339 @@
+@charset "utf-8";
+
+
+/* =========================
+   초기화
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: 0;
+    background: none;
+    font-family: inherit;
+}
+
+body {
+    font-family: Arial, "맑은 고딕", sans-serif;
+    color: #666;
+}
+
+
+
+/* =========================
+   Footer
+========================= */
+
+.footer {
+    width: 100%;
+    height: 204px;
+
+    background-color: #f8f8f8;
+
+    border-top: 1px solid #e5e5e5;
+}
+
+
+/* 안쪽 영역 */
+.footer-inner {
+    width: 1140px;
+    height: 204px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: flex-start;
+
+    position: relative;
+
+    padding-top: 40px;
+}
+
+
+
+/* =========================
+   로고
+========================= */
+
+.footer-logo {
+    width: 180px;
+    padding-top: 5px;
+}
+
+.footer-logo img {
+    width: 145px;
+    height: auto;
+    display: block;
+}
+
+
+
+/* =========================
+   가운데 정보
+========================= */
+
+.footer-info {
+    width: 550px;
+}
+
+
+/* 상단 메뉴 */
+.footer-menu {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 22px;
+}
+
+
+/* 메뉴 구분선 */
+.footer-menu li {
+    display: flex;
+    align-items: center;
+}
+
+
+/* 메뉴 사이 선 */
+.footer-menu li:not(:last-child)::after {
+    content: "";
+
+    width: 1px;
+    height: 12px;
+
+    background-color: #ccc;
+
+    margin: 0 14px;
+}
+
+
+/* 메뉴 글자 */
+.footer-menu a {
+    font-size: 14px;
+    color: #555;
+    white-space: nowrap;
+}
+
+
+/* 개인정보처리방침 */
+.footer-menu li:last-child a {
+    color: #333;
+    font-weight: bold;
+}
+
+
+
+/* =========================
+   회사 정보
+========================= */
+
+.company-info {
+    font-size: 12px;
+
+    color: #777;
+
+    line-height: 1.55;
+}
+
+.company-info p {
+    font-size: 12px;
+}
+
+.company-info span {
+    margin: 0 4px;
+    color: #bbb;
+}
+
+.company-info .copyright {
+    margin-top: 4px;
+
+    color: #aaa;
+}
+
+
+
+/* =========================
+   오른쪽 영역
+========================= */
+
+.footer-right {
+    margin-left: auto;
+
+    display: flex;
+    align-items: flex-start;
+
+    position: relative;
+}
+
+
+
+/* =========================
+   SNS
+========================= */
+
+.sns {
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+
+    margin-right: 35px;
+
+    padding-top: 11px;
+}
+
+.sns a {
+    display: block;
+}
+
+.sns img {
+    display: block;
+
+    width: 20px;
+    height: 20px;
+
+    object-fit: contain;
+}
+
+
+
+/* =========================
+   Family Site
+========================= */
+
+.family {
+    width: 240px;
+
+    position: relative;
+
+    z-index: 10;
+}
+
+
+/* 버튼 */
+.family-btn {
+    width: 240px;
+    height: 42px;
+
+    border: 1px solid #ccc;
+
+    background-color: #fff;
+
+    padding: 0 16px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    cursor: pointer;
+
+    color: #555;
+
+    font-size: 12px;
+
+    text-align: left;
+}
+
+
+/* 화살표 */
+.family-arrow {
+    width: 0;
+    height: 0;
+
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #888;
+
+    transition: transform 0.3s;
+}
+
+
+/* 열렸을 때 화살표 */
+.family.active .family-arrow {
+    transform: rotate(180deg);
+}
+
+
+
+/* =========================
+   Family Site 목록
+========================= */
+
+.family-list {
+    width: 240px;
+
+    display: none;
+
+    position: absolute;
+
+    right: 0;
+    bottom: 42px;
+
+    background-color: #fff;
+
+    border: 1px solid #ccc;
+
+    border-bottom: none;
+
+    max-height: 330px;
+
+    overflow-y: auto;
+}
+
+
+/* 목록 */
+.family-list li {
+    width: 100%;
+}
+
+
+/* 링크 */
+.family-list a {
+    display: block;
+
+    width: 100%;
+
+    padding: 7px 15px;
+
+    font-size: 13px;
+
+    color: #555;
+
+    background-color: #fff;
+}
+
+
+/* hover */
+.family-list a:hover {
+    background-color: #f2f2f2;
+
+    color: #111;
+}
+
+
+
+/* 스크롤바 */
+.family-list::-webkit-scrollbar {
+    width: 5px;
+}
+
+.family-list::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+}
+
+.family-list::-webkit-scrollbar-track {
+    background-color: #eee;
+}
