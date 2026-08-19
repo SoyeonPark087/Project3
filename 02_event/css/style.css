@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+body {
+    font-family: "맑은 고딕", "Malgun Gothic", sans-serif;
+    margin-left: 16px;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    margin-bottom: 26px;
+}
+
+ol{
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+
+button{
+    width: 50px;
+    height: 20px;
+    cursor: pointer;
+}
+
+hr{
+    margin: 30px 0;
+}
+
+.parent{
+    display: flex;
+    gap: 16px;
+}
+
+.parent div{
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+.box1{
+    background-color: #ffcc00;
+}
+
+.box2{
+    background-color: #47c2fb;
+}
+
+.box3{
+    background-color: #fd6f7d;
+}
+
