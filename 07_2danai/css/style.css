@@ -139,11 +139,16 @@ body {
 
 .gnb-item::after {
     content: "";
+   position: absolute;
+    top: 50%;
+    right: 0;
 
     width: 1px;
     height: 26px;
 
     background: #d5d5d5;
+   
+    transform: translateY(-50%);
 }
 
 .gnb-item:last-child::after {
@@ -206,7 +211,6 @@ body {
     background: #2584c5;
 
     transform: scaleX(0);
-    transform-origin: center;
 
     transition: transform 0.2s;
 }
@@ -238,12 +242,8 @@ body {
     visibility: hidden;
     opacity: 0;
 
-    transform: translate(-50%, -5px);
-
-    transition:
-        opacity 0.2s,
-        transform 0.2s,
-        visibility 0.2s;
+    transform: translateX(-50%);
+    z-index: 200;
 }
 
 
@@ -252,8 +252,6 @@ body {
 .gnb-item:hover .depth2 {
     visibility: visible;
     opacity: 1;
-
-    transform: translateY(0);
 }
 
 
@@ -282,9 +280,6 @@ body {
 
     background: #fff;
 
-    transition:
-        background 0.2s,
-        color 0.2s;
 }
 
 
@@ -292,8 +287,8 @@ body {
 
 .depth2 .arrow {
     display: none;
-
-    margin-right: 8px;
+    position: absolute;
+    left: 15px;
 
     font-size: 25px;
     font-weight: 300;
@@ -312,7 +307,7 @@ body {
 /* hover한 메뉴 화살표 표시 */
 
 .depth2 li:hover .arrow {
-    display: inline-block;
+    display: block;
 }
 
 
