@@ -1,0 +1,497 @@
+@charset "utf-8";
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+}
+
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+
+    color: #111;
+}
+
+
+ul,
+ol {
+    list-style: none;
+}
+
+
+a {
+    color: inherit;
+
+    text-decoration: none;
+}
+
+
+button {
+    border: 0;
+
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    position: relative;
+
+    width: 100%;
+    height: 110px;
+
+    background: #fff;
+
+    z-index: 1000;
+}
+
+
+/* 1140 × 110 */
+
+.header__inner {
+    display: flex;
+    align-items: center;
+
+    width: 1140px;
+    height: 110px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    flex-shrink: 0;
+}
+
+
+.logo a {
+    display: flex;
+    align-items: center;
+
+    height: 110px;
+}
+
+
+.logo img {
+    display: block;
+
+    width: 185px;
+    height: auto;
+}
+
+
+/* =========================================================
+   GNB
+========================================================= */
+
+.gnb {
+    width: 820px;
+    height: 110px;
+
+    margin-left: auto;
+}
+
+
+.gnb__list {
+    display: grid;
+
+    grid-template-columns: repeat(6, 1fr);
+
+    width: 100%;
+    height: 110px;
+}
+
+
+.gnb__item {
+    position: relative;
+
+    height: 110px;
+}
+
+
+.gnb__link {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    height: 110px;
+    margin: 0 auto;
+
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -1px;
+
+    white-space: nowrap;
+
+    color: #111;
+}
+
+
+/* =========================================================
+   GNB HOVER BOTTOM LINE
+========================================================= */
+
+/*
+    기본 상태에서는
+    아무 밑줄도 보이지 않음
+*/
+
+.gnb__link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 21px;
+
+    width: 0;
+    height: 4px;
+
+    background: #ff6700;
+}
+
+/*
+    JavaScript에서
+    is-active 클래스가 붙은 메뉴만
+    밑줄 표시
+*/
+
+.gnb__item.is-active .gnb__link::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   DEPTH 2
+========================================================= */
+
+.depth2 {
+    position: absolute;
+
+    top: 110px;
+    left: 0;
+
+    display: none;
+
+    width: 100%;
+
+    background: #fff;
+
+    border-top: 1px solid #e8e8e8;
+}
+
+
+/* JavaScript에서 is-open이 붙으면 바로 표시 */
+.header.is-open .depth2 {
+    display: block;
+}
+
+
+/*
+    JavaScript에서 is-open 추가
+*/
+
+.header.is-open .depth2 {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* =========================================================
+   DEPTH 2 INNER
+========================================================= */
+
+.depth2__inner {
+    display: flex;
+    justify-content: flex-end;
+
+    width: 1140px;
+
+    margin: 0 auto;
+}
+
+
+/*
+    주메뉴 GNB와 동일한 width
+
+    GNB          : 820px
+    DEPTH2 GRID  : 820px
+
+    이렇게 해야
+    각 2단 메뉴가 주메뉴 바로 아래로 정렬됨
+*/
+
+.depth2__grid {
+    display: grid;
+
+    grid-template-columns: repeat(6, 1fr);
+
+    width: 820px;
+
+    padding: 27px 0 30px;
+}
+
+
+/* =========================================================
+   DEPTH 2 MENU
+========================================================= */
+
+.depth2__menu {
+    text-align: center;
+}
+
+
+.depth2__menu li {
+    margin-bottom: 17px;
+}
+
+
+.depth2__menu li:last-child {
+    margin-bottom: 0;
+}
+
+
+.depth2__menu a {
+    display: inline-block;
+
+    font-size: 15px;
+    font-weight: 400;
+
+    line-height: 1.4;
+
+    color: #777;
+    letter-spacing: -1px;
+
+    white-space: nowrap;
+
+    transition: color 0.2s ease;
+}
+
+
+/*
+    요청사항
+
+    2단메뉴 텍스트
+    마우스 hover → 검정색
+*/
+
+.depth2__menu a:hover {
+    color: #000;
+    font-weight: 450;
+}
+
+
+/* =========================================================
+   MAIN VISUAL
+========================================================= */
+
+.main-visual {
+    position: relative;
+
+    width: 100%;
+    height: 600px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SWIPER
+========================================================= */
+
+.mainSwiper {
+    position: relative;
+
+    width: 100%;
+    height: 600px;
+}
+
+
+/* 각각의 슬라이드 */
+.main-slide {
+    width: 100%;
+    height: 600px;
+
+    /* 배경 이미지 공통 설정 */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+
+/* =========================================================
+   SLIDE BACKGROUND IMAGE
+
+   CSS 파일 위치가
+   css/style.css 이므로
+
+   ../images/파일명
+
+   으로 작성하면 됩니다.
+========================================================= */
+
+
+/* 첫 번째 이미지 */
+.main-slide01 {
+    background-image: url("../images/20231214092231893897.jpg");
+}
+
+
+/* 두 번째 이미지 */
+.main-slide02 {
+    background-image: url("../images/slide1.jpg");
+}
+
+
+/* 세 번째 이미지 */
+.main-slide03 {
+    background-image: url("../images/slide2.jpg");
+}
+
+
+/* =========================================================
+   좌 / 우 버튼 공통
+========================================================= */
+
+.main-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    width: 60px;
+    height: 80px;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    transform: translateY(-50%);
+
+    z-index: 20;
+}
+
+
+/* 왼쪽 버튼 */
+.main-prev {
+    left: calc(50% - 640px);
+}
+
+
+/* 오른쪽 버튼 */
+.main-next {
+    right: calc(50% - 640px);
+}
+
+
+/* =========================================================
+   화살표 모양
+========================================================= */
+
+.main-arrow span {
+    position: absolute;
+
+    top: 50%;
+
+    display: block;
+
+    width: 22px;
+    height: 22px;
+
+    border-top: 3px solid #fff;
+    border-right: 3px solid #fff;
+}
+
+
+/* 이전 화살표 */
+.main-prev span {
+    left: 22px;
+
+    transform:
+        translateY(-50%)
+        rotate(-135deg);
+}
+
+
+/* 다음 화살표 */
+.main-next span {
+    right: 22px;
+
+    transform:
+        translateY(-50%)
+        rotate(45deg);
+}
+
+
+/* =========================================================
+   PAGE NUMBER
+
+   1 / 3
+========================================================= */
+
+.main-pagination {
+    position: absolute;
+
+    left: 50%;
+    bottom: 30px;
+
+    width: auto;
+
+    color: #fff;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    transform: translateX(-50%);
+
+    z-index: 30;
+}
+
+
+/* 현재 페이지 */
+.main-pagination .swiper-pagination-current {
+    font-weight: 700;
+}
+
+
+/* / 표시 */
+.main-pagination .page-slash {
+    display: inline-block;
+
+    margin: 0 5px;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* 전체 페이지 */
+.main-pagination .swiper-pagination-total {
+    color: rgba(255, 255, 255, 0.7);
+}
