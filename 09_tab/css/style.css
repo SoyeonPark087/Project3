@@ -1,0 +1,83 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+section{
+    width: 100%;
+    padding: 170px 0 120px;
+    /* background-color: yellowgreen; */
+    
+}
+
+section .inner{
+    width: 1140px;
+    /* background-color: pink; */
+    margin: 0 auto;
+}
+
+h2{
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+
+}
+
+section .inner p{
+    font-size: 23px;
+    margin-top: 30px;
+    margin-bottom: 45px;
+    font-weight: 400;
+    text-align: center;
+}
+
+section .inner .tab{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+/*a는 inline 태그라 가로 세로 사이즈 적용 불가, block화 태그 입력 */
+section .inner .tab li a{
+    display: block;
+    width: 140px;
+    height: 45px;
+    border: 1px solid #5b5b5b;
+    border-radius: 999px;
+    text-align: center;
+    line-height: 45px;
+    font-size: 22px;
+    font-weight: 500;
+    color: #5b5b5b;
+}
+
+/* 하나에 버튼에 두가지 상태값을 표현할 때 */
+section .inner .tab .on a{
+    background-color: #ff6400;
+    color: #fff;
+    border: none;
+}
+
+section .inner .list{
+    display: flex;
+    justify-content: center;
+    gap: 300px;
+}
+
+section .inner .list li a h3{
+    text-align: center;
+    font-size: 15px;
+    color: #6a6a6a;
+    font-weight: 500;
+}
