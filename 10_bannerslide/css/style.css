@@ -1,0 +1,309 @@
+@charset "utf-8";
+
+/* =========================
+   초기화
+========================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "맑은 고딕", "Malgun Gothic", sans-serif;
+    color: #111;
+}
+
+
+/* =========================
+   설화수 추천 전체 섹션
+========================= */
+
+.recommend{
+    width: 100%;
+    height: 950px;
+    background: #fff;
+}
+
+
+/* =========================
+   이너 영역
+========================= */
+
+.recommend-inner{
+    width: 1440px;
+    height: 100%;
+    margin: 0 auto;
+
+    padding-top: 115px;
+
+    position: relative;
+}
+
+
+/* =========================
+   제목
+========================= */
+
+.recommend-inner h2{
+    margin-bottom: 32px;
+
+    font-size: 28px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   Swiper 영역
+========================= */
+
+.productSwiper{
+    width: 100%;
+
+    /*
+        좌우 버튼이 상품 이미지 영역 가운데에
+        배치될 수 있도록 relative
+    */
+    position: relative;
+}
+
+
+/* =========================
+   개별 슬라이드
+========================= */
+
+.productSwiper .swiper-slide{
+    text-align: center;
+}
+
+
+/* =========================
+   상품 이미지 영역
+
+   3개의 상품이 한 화면에 보이도록
+   Swiper가 자동으로 너비를 계산
+========================= */
+
+.product-image{
+    width: 100%;
+    height: 465px;
+
+    background-color: #f3f3f3;
+
+    /*
+        실제 상품이미지는 배경이미지로 삽입
+    */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+
+/* =========================
+   상품 이미지
+
+   파일명은 사용자가 직접 교체
+========================= */
+
+.product01{
+    background-image: url("../images/1.jpg");
+}
+
+.product02{
+    background-image: url("../images/2.jpg");
+}
+
+.product03{
+    background-image: url("../images/3.jpg");
+}
+
+.product04{
+    background-image: url("../images/4.jpg");
+}
+
+.product05{
+    background-image: url("../images/5.jpg");
+}
+
+.product06{
+    background-image: url("../images/6.jpg");
+}
+
+
+/* =========================
+   상품 정보
+========================= */
+
+.product-info{
+    padding-top: 20px;
+}
+
+
+/* 한글 상품명 */
+
+.product-info h3{
+    margin-bottom: 10px;
+
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+/* 영문 상품명 */
+
+.product-info .eng-name{
+    margin-bottom: 18px;
+
+    font-size: 15px;
+    font-weight: 400;
+}
+
+
+/* 가격 */
+
+.product-info .price{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+/* =========================
+   Swiper 기본 화살표 제거
+========================= */
+
+.custom-prev::after,
+.custom-next::after{
+    display: none;
+}
+
+
+/* =========================
+   좌우 버튼 공통
+========================= */
+
+.custom-prev,
+.custom-next{
+    width: 64px;
+    height: 64px;
+
+    margin-top: 0;
+    top: 198px;
+
+    background-color: rgba(255,255,255,0.5);
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+
+    border: 0;
+    cursor: pointer;
+    z-index: 10;
+}
+
+
+/* =========================
+   이전 버튼
+
+   이미지 파일 교체 가능
+========================= */
+
+.custom-prev{
+    left: 0;
+
+    background-image: url("../images/left.png");
+}
+
+
+/* =========================
+   다음 버튼
+========================= */
+
+.custom-next{
+    right: 0;
+
+    background-image: url("../images/right.png");
+}
+
+
+/* =========================
+   하단 컨트롤 전체
+========================= */
+
+.slide-control{
+    width: 455px;
+
+    margin: 48px auto 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+/* =========================
+   진행바 바탕
+========================= */
+
+.progress{
+    width: 420px;
+    height: 4px;
+
+    background: #ddd;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   실제 진행 막대
+
+   JavaScript에서 width 변경
+========================= */
+
+.progress-bar{
+    width: 25%;
+    height: 100%;
+
+    background: #111;
+
+    transition: width 0.4s ease;
+}
+
+
+/* =========================
+   재생 / 일시정지 버튼
+========================= */
+
+.play-control{
+    width: 20px;
+    height: 20px;
+
+    flex-shrink: 0;
+
+    border: 1px solid #333;
+    background-color: #fff;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 8px auto;
+
+    cursor: pointer;
+}
+
+
+/* 자동재생 중 = 일시정지 버튼 이미지 */
+
+.play-control.pause{
+    background-image: url("../images/pause.svg");
+}
+
+
+/* 자동재생 정지 상태 = 재생 버튼 이미지 */
+
+.play-control.play{
+    background-image: url("../images/play.svg");
+}

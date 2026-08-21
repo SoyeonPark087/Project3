@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>설화수 추천</title>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- 내가 만든 CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         설화수 추천 슬라이드 섹션
+    ========================== -->
+    <section class="recommend">
+
+        <div class="recommend-inner">
+
+            <!-- 섹션 제목 -->
+            <h2>설화수 추천</h2>
+
+
+            <!-- =========================
+                 Swiper 슬라이드
+            ========================== -->
+            <div class="swiper productSwiper">
+
+                <div class="swiper-wrapper">
+
+
+                    <!-- 상품 1 -->
+                    <div class="swiper-slide">
+
+                        <!--
+                            상품 이미지는 CSS의 background-image로 삽입
+                            class별로 이미지를 변경할 수 있음
+                        -->
+                        <div class="product-image product01"></div>
+
+                        <div class="product-info">
+                            <h3>탄력크림 EX</h3>
+
+                            <p class="eng-name">
+                                Essential Firming Cream EX
+                            </p>
+
+                            <p class="price">
+                                100,000원
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- 상품 2 -->
+                    <div class="swiper-slide">
+
+                        <div class="product-image product02"></div>
+
+                        <div class="product-info">
+                            <h3>자정기미코렉터</h3>
+
+                            <p class="eng-name">
+                                Lumiwise Discoloration Corrector
+                            </p>
+
+                            <p class="price">
+                                150,000원
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- 상품 3 -->
+                    <div class="swiper-slide">
+
+                        <div class="product-image product03"></div>
+
+                        <div class="product-info">
+                            <h3>퍼펙팅 쿠션 에어리</h3>
+
+                            <p class="eng-name">
+                                Perfecting Cushion Airy
+                            </p>
+
+                            <p class="price">
+                                89,000원
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- 상품 4 -->
+                    <div class="swiper-slide">
+
+                        <div class="product-image product04"></div>
+
+                        <div class="product-info">
+                            <h3>윤조아이세럼</h3>
+
+                            <p class="eng-name">
+                                First Care Activating Eye Serum
+                            </p>
+
+                            <p class="price">
+                                115,000원
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- 상품 5 -->
+                    <div class="swiper-slide">
+
+                        <div class="product-image product05"></div>
+
+                        <div class="product-info">
+                            <h3>여윤팩</h3>
+
+                            <p class="eng-name">
+                                Overnight Recharging Mask
+                            </p>
+
+                            <p class="price">
+                                70,000원
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- 상품 6 -->
+                    <div class="swiper-slide">
+
+                        <div class="product-image product06"></div>
+
+                        <div class="product-info">
+                            <h3>순행클렌징폼</h3>
+
+                            <p class="eng-name">
+                                Gentle Cleansing Foam
+                            </p>
+
+                            <p class="price">
+                                67,000원
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     이전 버튼
+                     이미지는 CSS에서 교체 가능
+                ========================== -->
+                <button class="swiper-button-prev custom-prev"
+                        type="button"
+                        aria-label="이전 상품">
+                </button>
+
+
+                <!-- =========================
+                     다음 버튼
+                     이미지는 CSS에서 교체 가능
+                ========================== -->
+                <button class="swiper-button-next custom-next"
+                        type="button"
+                        aria-label="다음 상품">
+                </button>
+
+            </div>
+
+
+            <!-- =========================
+                 하단 컨트롤 영역
+            ========================== -->
+            <div class="slide-control">
+
+
+                <!-- 진행바 전체 영역 -->
+                <div class="progress">
+
+                    <!-- 실제 진행되는 검정 막대 -->
+                    <div class="progress-bar"></div>
+
+                </div>
+
+
+                <!--
+                    자동재생 / 일시정지 버튼
+
+                    처음에는 자동재생 중이므로
+                    pause 이미지가 나타남
+                -->
+                <button class="play-control pause"
+                        type="button"
+                        aria-label="슬라이드 일시정지">
+                </button>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- 내가 만든 JavaScript -->
+    <script src="./js/script.js"></script>
+
+</body>
+</html>
