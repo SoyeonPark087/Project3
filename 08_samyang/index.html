@@ -863,54 +863,61 @@
 
 </footer>
 
-<!-- TOP 버튼 -->
-<button type="button" class="top-btn" aria-label="맨 위로 이동" style="display: inline-block;">
-    <img src="./images/up.svg" alt="맨 위로 이동">
+<button type="button" id="topBtn" class="top-btn" aria-label="맨 위로 이동">
+  <!-- 위쪽 화살표 -->
+  <span class="top-arrow">▲</span>
+  <!-- TOP 글자 -->
+  <span class="top-text">TOP</span>
 </button>
 
 
+  <!-- =========================
+       팝업 전체 영역
+  ========================== -->
+  <div class="popup-wrap" id="popup">
+
+    <!-- 팝업 박스 -->
+    <div class="popup">
+
+      <!-- 팝업 이미지 영역 -->
+      <div class="popup-image">
+        <!--
+          아래 이미지 파일명만
+          내 컴퓨터에 있는 실제 이미지명으로 변경해주세요.
+
+          예:
+          ./images/popup.jpg
+          ./images/event-popup.png
+        -->
+        <img
+          src="./images/popup.jpg"
+          alt="이벤트 팝업 이미지"
+        >
+      </div>
 
 
-<!-- =========================
-     팝업창
-========================= -->
+      <!-- =========================
+           팝업 하단 영역
+      ========================== -->
+      <div class="popup-bottom">
 
-<div class="popup-overlay" style="display: none;">
-
-    <div class="popup-box">
+        <!-- 오늘 하루 보지 않기 -->
+        <label class="today-close">
+          <input type="checkbox" id="todayClose">
+          <span>오늘 하루 이 창을 열지 않음</span>
+        </label>
 
         <!-- 팝업 닫기 버튼 -->
-        <button type="button" class="popup-close" aria-label="팝업 닫기">
-            ×
+        <button type="button" id="closeBtn">
+          [닫기]
         </button>
 
-
-        <!-- 팝업 이미지 -->
-        <div class="popup-image">
-            <img src="./images/popup.jpg" alt="이벤트 프로모션 팝업 이미지">
-        </div>
-
-
-        <!-- 팝업 하단 -->
-        <div class="popup-bottom">
-
-            <!-- 오늘 하루 닫기 -->
-            <label class="today-close">
-                <input type="checkbox" class="today-check">
-                <span>오늘 하루 이 창을 열지 않음</span>
-            </label>
-
-
-            <!-- 일반 닫기 -->
-            <button type="button" class="popup-bottom-close">
-                닫기
-            </button>
-
-        </div>
+      </div>
 
     </div>
 
-</div>
+  </div>
+
 
 
 
