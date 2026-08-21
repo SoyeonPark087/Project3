@@ -1,0 +1,663 @@
+@charset "UTF-8";
+
+
+/* =========================================
+   RESET
+========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html,
+body {
+  width: 100%;
+}
+
+
+body {
+  font-family: Arial, "Noto Sans KR", sans-serif;
+}
+
+
+button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+
+/* =========================================
+   BANNER SECTION
+========================================= */
+.banner-section {
+  position: relative;
+
+  /* 요청사항 : 전체 가로 100% */
+  width: 100%;
+
+  /* 요청사항 : 세로 480px */
+  height: 480px;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   SWIPER
+========================================= */
+.bannerSwiper {
+  position: relative;
+
+  width: 100%;
+  height: 480px;
+}
+
+
+/* =========================================
+   SLIDE 공통
+========================================= */
+.bannerSwiper .swiper-slide {
+  width: 100%;
+  height: 480px;
+
+  /* 요청사항 : 배경이미지 적용 */
+  background-repeat: no-repeat;
+
+  /* 배경 이미지 가운데 정렬 */
+  background-position: center center;
+
+  /* 시안처럼 배너 영역을 꽉 채움 */
+  background-size: cover;
+}
+
+
+/* =========================================
+   각각의 배너 이미지
+
+   파일명만 직접 변경해서 사용
+========================================= */
+.bannerSwiper .slide01 {
+  background-image: url("../images/banner1.jpg");
+}
+
+
+.bannerSwiper .slide02 {
+  background-image: url("../images/banner2.jpg");
+}
+
+
+.bannerSwiper .slide03 {
+  background-image: url("../images/banner3.jpg");
+}
+
+
+.bannerSwiper .slide04 {
+  background-image: url("../images/banner4.jpg");
+}
+
+
+.bannerSwiper .slide05 {
+  background-image: url("../images/banner5.jpg");
+}
+
+
+.bannerSwiper .slide06 {
+  background-image: url("../images/banner6.jpg");
+}
+
+
+/* =========================================
+   Swiper 기본 화살표 제거
+========================================= */
+.bannerSwiper .swiper-button-prev::after,
+.bannerSwiper .swiper-button-next::after {
+  display: none;
+}
+
+
+/* =========================================
+   좌우 버튼 공통
+========================================= */
+.bannerSwiper .swiper-button-prev,
+.bannerSwiper .swiper-button-next {
+  position: absolute;
+
+  /* 시안처럼 화면 아래쪽에 배치 */
+  top: auto;
+  bottom: 24px;
+
+  width: 42px;
+  height: 42px;
+
+  margin-top: 0;
+
+  border-radius: 50%;
+
+  background-color: #fff;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  z-index: 20;
+}
+
+
+/* =========================================
+   이전 버튼
+
+   이미지 직접 교체 가능
+========================================= */
+.bannerSwiper .custom-prev {
+  left: calc(50% - 590px);
+
+  background-image: url("../images/icon-arrow-left-a3a3a3-24.svg");
+}
+
+
+/* =========================================
+   다음 버튼
+
+   이미지 직접 교체 가능
+========================================= */
+.bannerSwiper .custom-next {
+  left: calc(50% - 535px);
+
+  background-image: url("../images/icon-arrow-right-a3a3a3-24.svg");
+}
+
+
+/* =========================================
+   PAGE 번호
+========================================= */
+.bannerSwiper .swiper-pagination {
+  position: absolute;
+
+  /* 시안처럼 오른쪽 아래 배치 */
+  left: auto;
+  right: calc(50% - 590px);
+  bottom: 27px;
+
+  width: auto;
+
+  padding: 5px 12px;
+
+  border-radius: 20px;
+
+  background: rgba(90, 90, 90, 0.75);
+
+  color: #fff;
+
+  font-size: 14px;
+  line-height: 1;
+
+  z-index: 20;
+}
+
+
+/* 현재 페이지 */
+.bannerSwiper .swiper-pagination-current {
+  font-weight: 700;
+}
+
+
+/* 전체 페이지 */
+.bannerSwiper .swiper-pagination-total {
+  opacity: 0.9;
+}
+/* =========================================
+   PRODUCT SECTION
+========================================= */
+.product-section {
+  width: 100%;
+  height: 790px;
+
+  background: #fff;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   PRODUCT INNER
+
+   전체 기준 영역은 요청한 1340px
+========================================= */
+.product-inner {
+  position: relative;
+
+  width: 1340px;
+  height: 100%;
+
+  margin: 0 auto;
+
+  /* 시안보다 기존 결과물이 조금 아래로 내려와 있어
+     상단 간격 재조정 */
+  padding-top: 30px;
+}
+
+
+/* =========================================
+   SECTION 상단 제목
+========================================= */
+.product-heading {
+  position: relative;
+
+  width: 1180px;
+
+  margin: 0 auto 38px;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   메인 제목
+========================================= */
+.product-heading h2 {
+  margin: 0;
+
+  /* 요청사항 */
+  font-size: 45px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  letter-spacing: -2px;
+
+  color: #111;
+}
+
+
+/* =========================================
+   서브 제목
+========================================= */
+.product-heading p {
+  margin-top: 12px;
+
+  /* 시안에서는 상품 정보보다 작음 */
+  font-size: 17px;
+
+  line-height: 1.4;
+
+  font-weight: 400;
+
+  color: #777;
+}
+
+
+/* =========================================
+   전체보기
+========================================= */
+.view-all {
+  position: absolute;
+
+  right: 0;
+  bottom: 2px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  font-size: 15px;
+  font-weight: 400;
+
+  color: #333;
+}
+
+
+/* 전체보기 오른쪽 원형 화살표 */
+.view-all span {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  width: 19px;
+  height: 19px;
+
+  border-radius: 50%;
+
+  background: #f3f3f3;
+
+  color: #999;
+
+  font-size: 18px;
+  line-height: 1;
+}
+
+
+/* =========================================
+   SLIDE SECTION
+
+   1340px inner 안에서
+   실제 상품 영역은 시안처럼 1180px
+========================================= */
+.slide-section {
+  position: relative;
+
+  width: 1180px;
+
+  height: 550px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   PRODUCT SWIPER
+========================================= */
+.productSwiper {
+  position: relative;
+
+  width: 100%;
+
+  height: 550px;
+
+  /* 카드가 영역 밖으로 튀어나오지 않도록 설정 */
+  overflow: hidden;
+}
+
+
+/* =========================================
+   SLIDE
+========================================= */
+.productSwiper .swiper-slide {
+  height: auto;
+}
+
+
+/* =========================================
+   PRODUCT CARD
+========================================= */
+.product-card {
+  width: 100%;
+}
+
+
+/* =========================================
+   상품 이미지 영역
+========================================= */
+.product-image {
+  position: relative;
+
+  width: 100%;
+
+  /* 원본 시안에 가까운 이미지 높이 */
+  height: 380px;
+
+  overflow: hidden;
+
+  border-radius: 3px;
+
+  background: #f7f7f7;
+}
+
+
+/* 상품 사진 */
+.product-image > img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* =========================================
+   장바구니 버튼
+========================================= */
+.cart-btn {
+  position: absolute;
+
+  right: 12px;
+  bottom: 12px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  width: 48px;
+  height: 48px;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: rgba(90, 90, 90, 0.8);
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  z-index: 10;
+}
+
+
+/* 장바구니 아이콘 */
+.cart-btn img {
+  display: block;
+
+  width: 26px;
+  height: 26px;
+
+  object-fit: contain;
+}
+
+
+/* =========================================
+   상품 정보
+========================================= */
+.product-info {
+  width: 100%;
+
+  /* 시안은 이미지와 글자가 상당히 가까움 */
+  padding-top: 12px;
+
+  text-align: left;
+}
+
+
+/* =========================================
+   뱃지 영역
+========================================= */
+.badge-wrap {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  /* 기존 min-height 때문에
+     뱃지가 없는 카드에 공간이 과하게 생기는 것을 방지 */
+  min-height: 20px;
+
+  margin-bottom: 3px;
+}
+
+
+/* =========================================
+   뱃지 공통
+========================================= */
+.badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  height: 18px;
+
+  padding: 0 4px;
+
+  border-radius: 2px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  line-height: 18px;
+}
+
+
+/* 신제품 */
+.badge.new {
+  background: #ffe2dd;
+
+  color: #ef4438;
+}
+
+
+/* 냉동 */
+.badge.frozen {
+  background: #e0f3ff;
+
+  color: #3093c7;
+}
+
+
+/* 맵지않음 */
+.badge.spicy {
+  background: #fff0bd;
+
+  color: #e29715;
+}
+
+
+/* =========================================
+   상품명
+
+   요청하신 카드 글자 기준 21px 적용
+========================================= */
+.product-info h3 {
+  margin: 0;
+
+  font-size: 21px;
+
+  line-height: 1.35;
+
+  font-weight: 700;
+
+  letter-spacing: -0.5px;
+
+  color: #222;
+}
+
+
+/* =========================================
+   상품 설명
+
+   시안상 상품명보다 작은 크기
+========================================= */
+.description {
+  margin-top: 5px;
+
+  font-size: 14px;
+
+  line-height: 1.45;
+
+  font-weight: 400;
+
+  letter-spacing: -0.3px;
+
+  color: #777;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================
+   가격
+========================================= */
+.price {
+  display: block;
+
+  margin-top: 7px;
+
+  font-size: 21px;
+
+  line-height: 1.3;
+
+  font-weight: 700;
+
+  color: #111;
+}
+
+
+/* =========================================
+   Swiper 기본 화살표 제거
+========================================= */
+.productSwiper .swiper-button-prev::after,
+.productSwiper .swiper-button-next::after {
+  display: none;
+}
+
+
+/* =========================================
+   좌우 버튼 공통
+========================================= */
+.productSwiper .swiper-button-prev,
+.productSwiper .swiper-button-next {
+  position: absolute;
+
+  /*
+     상품 이미지 세로 중앙에 배치
+     이미지 높이 380 / 2
+  */
+  top: 190px;
+
+  width: 42px;
+  height: 42px;
+
+  margin: 0;
+
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+
+  background-color: #fff;
+
+  background-repeat: no-repeat;
+
+  background-position: center;
+
+  /* 화살표 SVG 자체가 너무 크게 보이지 않도록 */
+  background-size: 20px 20px;
+
+  box-shadow: 0 0 0 1px #eee;
+
+  z-index: 30;
+}
+
+
+/* =========================================
+   이전 버튼
+
+   시안처럼 카드 영역 가장자리에 걸치게
+========================================= */
+.productSwiper .custom-prev {
+  left: -1px;
+
+  background-image:
+    url("../images/icon-arrow-left-a3a3a3-24.svg");
+}
+
+
+/* =========================================
+   다음 버튼
+========================================= */
+.productSwiper .custom-next {
+  right: -1px;
+
+  background-image:
+    url("../images/icon-arrow-right-a3a3a3-24.svg");
+}

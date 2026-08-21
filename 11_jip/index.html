@@ -1,0 +1,498 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>배너 슬라이드</title>
+
+  <!-- =========================
+       Swiper CSS
+  ========================== -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  >
+
+  <!-- 사용자 CSS -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       BANNER SLIDE SECTION 시작
+  ========================================== -->
+  <section class="banner-section">
+
+    <!-- Swiper 시작 -->
+    <div class="swiper bannerSwiper">
+
+      <!-- 슬라이드 전체 영역 -->
+      <div class="swiper-wrapper">
+
+        <!-- =========================
+             SLIDE 01
+        ========================== -->
+        <div class="swiper-slide slide01"></div>
+
+        <!-- =========================
+             SLIDE 02
+        ========================== -->
+        <div class="swiper-slide slide02"></div>
+
+        <!-- =========================
+             SLIDE 03
+        ========================== -->
+        <div class="swiper-slide slide03"></div>
+
+        <!-- =========================
+             SLIDE 04
+        ========================== -->
+        <div class="swiper-slide slide04"></div>
+
+        <!-- =========================
+             SLIDE 05
+        ========================== -->
+        <div class="swiper-slide slide05"></div>
+
+        <!-- =========================
+             SLIDE 06
+        ========================== -->
+        <div class="swiper-slide slide06"></div>
+
+      </div>
+      <!-- 슬라이드 전체 영역 끝 -->
+
+
+      <!-- =========================================
+           이전 버튼
+           이미지 파일 직접 교체 가능
+      ========================================== -->
+      <button
+        type="button"
+        class="swiper-button-prev custom-prev"
+        aria-label="이전 슬라이드"
+      ></button>
+
+
+      <!-- =========================================
+           다음 버튼
+           이미지 파일 직접 교체 가능
+      ========================================== -->
+      <button
+        type="button"
+        class="swiper-button-next custom-next"
+        aria-label="다음 슬라이드"
+      ></button>
+
+
+      <!-- =========================================
+           페이지 번호
+           1 / 6 형식
+      ========================================== -->
+      <div class="swiper-pagination"></div>
+
+    </div>
+    <!-- Swiper 끝 -->
+
+  </section>
+  <!-- =========================================
+       BANNER SLIDE SECTION 끝
+  ========================================== -->
+
+
+  <!-- =========================
+       Swiper JavaScript
+  ========================== -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+ 
+  <!-- =========================================
+       PRODUCT SECTION 시작
+  ========================================== -->
+  <section class="product-section">
+
+    <!-- 가운데 정렬 INNER -->
+    <div class="product-inner">
+
+      <!-- =========================================
+           SECTION 상단 제목 영역
+      ========================================== -->
+      <div class="product-heading">
+
+        <div class="heading-text">
+          <h2>여름 휴가도, 집반찬</h2>
+          <p>막바지 휴가준비도 간편하게!</p>
+        </div>
+
+        <!-- 전체보기 -->
+        <a href="#" class="view-all">
+          전체보기
+          <span>›</span>
+        </a>
+
+      </div>
+      <!-- SECTION 상단 제목 영역 끝 -->
+
+
+      <!-- =========================================
+           SLIDE SECTION 시작
+      ========================================== -->
+      <div class="slide-section">
+
+        <!-- Swiper 시작 -->
+        <div class="swiper productSwiper">
+
+          <!-- 슬라이드 전체 영역 -->
+          <div class="swiper-wrapper">
+
+
+            <!-- =====================================
+                 SLIDE 01
+            ====================================== -->
+            <div class="swiper-slide">
+
+              <article class="product-card">
+
+                <!-- 상품 이미지 영역 -->
+                <div class="product-image">
+
+                  <img
+                    src="./images/menu1.jpg"
+                    alt="맑은 한우 배추국"
+                  >
+
+                  <!-- 장바구니 버튼 -->
+                  <button
+                    type="button"
+                    class="cart-btn"
+                    aria-label="장바구니 담기"
+                  >
+                    <img
+                      src="./images/icon-cart-fafafa-42.svg"
+                      alt=""
+                    >
+                  </button>
+
+                </div>
+
+
+                <!-- 상품 정보 -->
+                <div class="product-info">
+
+                  <div class="badge-wrap">
+                    <span class="badge new">신제품</span>
+                    <span class="badge frozen">냉동</span>
+                  </div>
+
+                  <h3>매콤 콩나물잡채</h3>
+
+                  <p class="description">
+                    담백하고 개운한, 배추와 한우의 깊은 맛
+                  </p>
+
+                  <strong class="price">9,900원</strong>
+
+                </div>
+
+              </article>
+
+            </div>
+            <!-- SLIDE 01 끝 -->
+
+
+            <!-- =====================================
+                 SLIDE 02
+            ====================================== -->
+            <div class="swiper-slide">
+
+              <article class="product-card">
+
+                <div class="product-image">
+
+                  <img
+                    src="./images/menu2.jpg"
+                    alt="콩나물 황태국"
+                  >
+
+                  <button
+                    type="button"
+                    class="cart-btn"
+                    aria-label="장바구니 담기"
+                  >
+                    <img
+                      src="./images/icon-cart-fafafa-42.svg"
+                      alt=""
+                    >
+                  </button>
+
+                </div>
+
+
+                <div class="product-info">
+
+                  <div class="badge-wrap">
+                    <span class="badge frozen">냉동</span>
+                    <span class="badge spicy">맵지않음</span>
+                  </div>
+
+                  <h3>양파고추 장아찌</h3>
+
+                  <p class="description">
+                    시원하고 담백한
+                  </p>
+
+                  <strong class="price">9,900원</strong>
+
+                </div>
+
+              </article>
+
+            </div>
+            <!-- SLIDE 02 끝 -->
+
+
+            <!-- =====================================
+                 SLIDE 03
+            ====================================== -->
+            <div class="swiper-slide">
+
+              <article class="product-card">
+
+                <div class="product-image">
+
+                  <img
+                    src="./images/menu3.jpg"
+                    alt="한돈 사태김치찜"
+                  >
+
+                  <button
+                    type="button"
+                    class="cart-btn"
+                    aria-label="장바구니 담기"
+                  >
+                    <img
+                      src="./images/icon-cart-fafafa-42.svg"
+                      alt=""
+                    >
+                  </button>
+
+                </div>
+
+
+                <div class="product-info">
+
+                  <div class="badge-wrap">
+                    <span class="badge new">신제품</span>
+                  </div>
+
+                  <h3>참치마요 주먹밥</h3>
+
+                  <p class="description">
+                    깊은 맛이 사태에 폭 배어, 진짜 집밥 느낌!
+                  </p>
+
+                  <strong class="price">10,800원</strong>
+
+                </div>
+
+              </article>
+
+            </div>
+            <!-- SLIDE 03 끝 -->
+
+
+            <!-- =====================================
+                 SLIDE 04
+            ====================================== -->
+            <div class="swiper-slide">
+
+              <article class="product-card">
+
+                <div class="product-image">
+
+                  <img
+                    src="./images/menu4.jpg"
+                    alt="매콤 한돈 사태찜"
+                  >
+
+                  <button
+                    type="button"
+                    class="cart-btn"
+                    aria-label="장바구니 담기"
+                  >
+                    <img
+                      src="./images/icon-cart-fafafa-42.svg"
+                      alt=""
+                    >
+                  </button>
+
+                </div>
+
+
+                <div class="product-info">
+
+                  <div class="badge-wrap">
+                    <span class="badge new">신제품</span>
+                  </div>
+
+                  <h3>한돈 사태김치찜</h3>
+
+                  <p class="description">
+                    맛있게 매운맛에 부드러운 채소까지
+                  </p>
+
+                  <strong class="price">10,800원</strong>
+
+                </div>
+
+              </article>
+
+            </div>
+            <!-- SLIDE 04 끝 -->
+
+
+            <!-- =====================================
+                 SLIDE 05
+            ====================================== -->
+            <div class="swiper-slide">
+
+              <article class="product-card">
+
+                <div class="product-image">
+
+                  <img
+                    src="./images/menu5.jpg"
+                    alt="상품 5"
+                  >
+
+                  <button
+                    type="button"
+                    class="cart-btn"
+                    aria-label="장바구니 담기"
+                  >
+                    <img
+                      src="./images/icon-cart-fafafa-42.svg"
+                      alt=""
+                    >
+                  </button>
+
+                </div>
+
+
+                <div class="product-info">
+
+                  <div class="badge-wrap">
+                    <span class="badge frozen">냉동</span>
+                  </div>
+
+                  <h3>매콤 한돈 사태찜</h3>
+
+                  <p class="description">
+                    상품 설명 문구를 입력해주세요.
+                  </p>
+
+                  <strong class="price">12,000원</strong>
+
+                </div>
+
+              </article>
+
+            </div>
+            <!-- SLIDE 05 끝 -->
+
+
+            <!-- =====================================
+                 SLIDE 06
+            ====================================== -->
+            <div class="swiper-slide">
+
+              <article class="product-card">
+
+                <div class="product-image">
+
+                  <img
+                    src="./images/menu6.jpg"
+                    alt="상품 6"
+                  >
+
+                  <button
+                    type="button"
+                    class="cart-btn"
+                    aria-label="장바구니 담기"
+                  >
+                    <img
+                      src="./images/icon-cart-fafafa-42.svg"
+                      alt=""
+                    >
+                  </button>
+
+                </div>
+
+
+                <div class="product-info">
+
+                  <div class="badge-wrap">
+                    <span class="badge new">신제품</span>
+                  </div>
+
+                  <h3>맑은 한우 배추국_냉동</h3>
+
+                  <p class="description">
+                    상품 설명 문구를 입력해주세요.
+                  </p>
+
+                  <strong class="price">13,000원</strong>
+
+                </div>
+
+              </article>
+
+            </div>
+            <!-- SLIDE 06 끝 -->
+
+
+          </div>
+          <!-- 슬라이드 전체 영역 끝 -->
+
+
+          <!-- =========================================
+               이전 버튼
+               이미지 직접 교체 가능
+          ========================================== -->
+          <button
+            type="button"
+            class="swiper-button-prev custom-prev"
+            aria-label="이전 상품"
+          ></button>
+
+
+          <!-- =========================================
+               다음 버튼
+               이미지 직접 교체 가능
+          ========================================== -->
+          <button
+            type="button"
+            class="swiper-button-next custom-next"
+            aria-label="다음 상품"
+          ></button>
+
+        </div>
+        <!-- Swiper 끝 -->
+
+      </div>
+      <!-- SLIDE SECTION 끝 -->
+
+    </div>
+    <!-- INNER 끝 -->
+
+  </section>
+  <!-- =========================================
+       PRODUCT SECTION 끝
+  ========================================== -->
+ <!-- 사용자 JavaScript -->
+  <script src="./js/script.js"></script>
+</body>
+</html>
