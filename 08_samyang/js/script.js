@@ -116,93 +116,138 @@ $(".family-btn").click(function(){
 
 });
 
-/* =========================
-   TOP 버튼
-========================= */
+// ================================
+// 팝업창 관련 요소 가져오기
+// ================================
+const popup = document.getElementById("popup");
+const closeBtn = document.getElementById("closeBtn");
+const todayClose = document.getElementById("todayClose");
 
-$(window).scroll(function(){
 
-    /* 스크롤을 500px 이상 내리면 버튼 보이기 */
-    if($(this).scrollTop() > 500){
+// ================================
+// 오늘 날짜를 만드는 함수
+// 예: 2026-08-21
+// ================================
+function getToday() {
+  const today = new Date();
 
-        $(".top-btn").fadeIn();
+  const year = today.getFullYear();
 
-    }else{
+  const month = String(today.getMonth() + 1).padStart(2, "0");
 
-        $(".top-btn").fadeOut();
+  const date = String(today.getDate()).padStart(2, "0");
 
-    }
+  return `${year}-${month}-${date}`;
+}
+
+
+// ================================
+// 페이지가 로딩되었을 때 실행
+// ================================
+window.addEventListener("DOMContentLoaded", function () {
+
+  // localStorage에 저장되어 있는 날짜 가져오기
+  const popupCloseDate = localStorage.getItem("popupCloseDate");
+
+  // 오늘 날짜 가져오기
+  const today = getToday();
+
+
+  // 저장된 날짜가 오늘과 같으면
+  // 팝업창을 표시하지 않습니다.
+  if (popupCloseDate === today) {
+
+    popup.style.display = "none";
+
+  } else {
+
+    // 오늘 닫은 기록이 없으면
+    // 팝업창을 화면 중앙에 표시
+    popup.style.display = "flex";
+  }
 
 });
 
 
-/* TOP 버튼 클릭 */
+// ================================
+// [닫기] 버튼 클릭 이벤트
+// ================================
+closeBtn.addEventListener("click", function () {
 
-$(".top-btn").click(function(){
+  // '오늘 하루 이 창을 열지 않음'이
+  // 체크되어 있는지 확인
+  if (todayClose.checked) {
 
-    $("html, body").animate({
+    // 오늘 날짜를 저장합니다.
+    // 브라우저를 새로고침해도 오늘은 팝업이 뜨지 않습니다.
+    localStorage.setItem(
+      "popupCloseDate",
+      getToday()
+    );
+  }
 
-        scrollTop: 0
 
-    }, 500);
+  // 팝업창 닫기
+  popup.style.display = "none";
 
 });
+/* =========================================
+   TOP 버튼 기능
+========================================= */
 
-/* =========================
-   팝업창
-========================= */
+$(function () {
 
-$(function(){
-
-    /* 오늘 날짜 */
-    const today = new Date().toDateString();
-
-
-    /* 저장된 날짜 불러오기 */
-    const popupCloseDay = localStorage.getItem("popupCloseDay");
+  /* -----------------------------------------
+     TOP 버튼 가져오기
+  ------------------------------------------ */
+  const $topBtn = $("#topBtn");
 
 
-    /* 저장된 날짜가 오늘과 같으면 팝업 숨기기 */
-    if(popupCloseDay === today){
+  /* -----------------------------------------
+     스크롤 이벤트
 
-        $(".popup-overlay").hide();
+     페이지가 일정 거리 이상 내려가면
+     TOP 버튼을 보여줍니다.
+  ------------------------------------------ */
+  $(window).on("scroll", function () {
 
-    }else{
+    /* 현재 스크롤 위치 */
+    const scrollTop = $(window).scrollTop();
 
-        /* 웹페이지 로딩시 팝업 보이기 */
-        $(".popup-overlay").show();
+
+    /* 300px 이상 스크롤 되었을 때 */
+    if (scrollTop > 300) {
+
+      $topBtn.addClass("show");
+
+    } else {
+
+      /* 상단에 가까우면 버튼 숨기기 */
+      $topBtn.removeClass("show");
 
     }
 
-
-    /* =========================
-       X 버튼 클릭
-    ========================= */
-
-    $(".popup-close").click(function(){
-
-        $(".popup-overlay").hide();
-
-    });
+  });
 
 
-    /* =========================
-       하단 닫기 버튼 클릭
-    ========================= */
+  /* -----------------------------------------
+     TOP 버튼 클릭 이벤트
+  ------------------------------------------ */
+  $topBtn.on("click", function () {
 
-    $(".popup-bottom-close").click(function(){
+    /* 
+       html, body를 맨 위로 이동
+       700ms 동안 부드럽게 애니메이션
+    */
+    $("html, body")
+      .stop()
+      .animate(
+        {
+          scrollTop: 0
+        },
+        700
+      );
 
-        /* 오늘 하루 닫기 체크 여부 */
-        if($(".today-check").is(":checked")){
-
-            /* 오늘 날짜 저장 */
-            localStorage.setItem("popupCloseDay", today);
-
-        }
-
-        /* 팝업 닫기 */
-        $(".popup-overlay").hide();
-
-    });
+  });
 
 });
