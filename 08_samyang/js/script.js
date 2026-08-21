@@ -122,8 +122,8 @@ $(".family-btn").click(function(){
 
 $(window).scroll(function(){
 
-    /* 스크롤을 300px 이상 내리면 버튼 보이기 */
-    if($(this).scrollTop() > 300){
+    /* 스크롤을 500px 이상 내리면 버튼 보이기 */
+    if($(this).scrollTop() > 500){
 
         $(".top-btn").fadeIn();
 
