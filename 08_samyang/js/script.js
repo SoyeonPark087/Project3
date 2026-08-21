@@ -82,6 +82,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+   /* 2단 메뉴 hover 시 해당 주메뉴 active */
+const depth2Menus = document.querySelectorAll(".depth2__menu");
+
+depth2Menus.forEach(function (menu, index) {
+
+    menu.addEventListener("mouseenter", function () {
+
+        gnbItems.forEach(function (item) {
+            item.classList.remove("is-active");
+        });
+
+        if (gnbItems[index]) {
+            gnbItems[index].classList.add("is-active");
+        }
+
+    });
+
+});
 
 
     /* =====================================================
