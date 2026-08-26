@@ -92,6 +92,42 @@
         document.write("<hr>")
 
 
+
+        //응용1
+        let book1 = ["미드나잇 라이브러리", "매트 헤이그", "14,220원", "2021년 4월 28일", 408, "979119152168545(46516544534)"]
+        document.write(`책 제목 : ${book1[0]}<br>`)
+        document.write(`저자 : ${book1[1]}<br>`)
+        document.write(`가격 : ${book1[2]}<br>`)
+        document.write(`출간일 : ${book1[3]}<br>`)
+        document.write(`페이지수 : ${book1[4]}<br>`)
+        document.write(`ISBN : ${book1[5]}<br>`)
+
+        document.write("<hr>")
+
+
+
+        //응용2
+        let book2 = {
+            name:"미드나잇 라이브러리",
+            writer:"매트 헤이그",
+            price:"14,220원",
+            date:"2021년 4월 28일",
+            page:408,
+            ISBN:"979119152168545(46516544534)" 
+        }
+
+        document.write(`책 제목 : ${book2.name}` + "<br>")
+        document.write(`저자 : ${book2.writer}` + "<br>")
+        document.write(`가격 : ${book2.price}` + "<br>")
+        document.write(`출간일 : ${book2.date}` + "<br>")
+        document.write(`페이지 수: ${book2.page}` + "<br>")
+        document.write(`ISBN : ${book2.ISBN}` + "<br>")
+
+        document.write("<hr>")
+
+
+
+        //응용3
         const book = {
             name:"미드나잇 라이브러리",
             writer:"매트 헤이그",
@@ -107,6 +143,21 @@
         document.write(`출간일 : ${book.date}` + "<br>")
         document.write(`페이지 수 : ${book.page}` + "<br>")
         document.write(`ISBN : ${book.ISBN}` + "<br>")
+
+        document.write("<hr>")
+
+
+        
+        //응용4
+        const info= ["미드나잇 라이브러리", "매트 헤이그", "14,220원", "2021년 4월 28일", 408, "979119152168545(46516544534)"]
+        const title = ["책 제목", "저자", "가격", "출간일", "페이지 수", "ISBN"]
+
+        for(let i=0; i<info.length; i++){
+            document.write(`${title[i]} = ${info[i]}<br>`)
+        }
+
+        document.write("<hr>")
+
 
     </script>
 </body>
