@@ -18,6 +18,7 @@
         document.write("<hr>")
 
 
+
         let score = {
             kor:100,
             eng:90,
@@ -32,6 +33,7 @@
 
         document.write("<hr>")
 
+        
 
         const car = {
             color:"검정",
@@ -45,6 +47,7 @@
         console.log(car)
 
         document.write("<hr>")
+
 
 
         const sungjuk = {
@@ -61,6 +64,49 @@
 
         document.write("<hr>")
 
+
+
+        const scores = [100, 90, 80, 70,]
+        const subjects = ["국어", "영어", "수학", "과학"]
+
+        for(let i=0; i<scores.length; i++){
+            document.write(`${subjects[i]} = ${scores[i]}<br>`)
+        }
+
+        document.write("<hr>")
+
+
+
+        const jumsus = {
+            kor:100,
+            eng:90,
+            mat:80,
+            sci:70,
+        }
+
+        for(let subject in jumsus){
+            document.write(`${subject}=${jumsus[subject]}<br>`)
+
+        }
+
+        document.write("<hr>")
+
+
+        const book = {
+            name:"미드나잇 라이브러리",
+            writer:"매트 헤이그",
+            price:"14,220원",
+            date:"2021년 4월 28일",
+            page:408,
+            ISBN:"979119152168545(46516544534)" 
+        }
+
+        document.write(`책제목 : ${book.name}` + "<br>")
+        document.write(`저자 : ${book.writer}` + "<br>")
+        document.write(`가격 : ${book.price}` + "<br>")
+        document.write(`출간일 : ${book.date}` + "<br>")
+        document.write(`페이지 수 : ${book.page}` + "<br>")
+        document.write(`ISBN : ${book.ISBN}` + "<br>")
 
     </script>
 </body>
